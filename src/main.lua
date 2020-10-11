@@ -12,26 +12,14 @@ function love.draw()
     boss.player.draw()
 end
 
-function love.mousepressed(x, y, button)
-    print(x, y, button)
-end
-function love.mousereleased(x, y, button)
-end
-
-function love.keypressed(key)
-end
+function love.keypressed(key) end
+function love.mousepressed(x, y, button) end
+function love.mousereleased(x, y, button) end
+function love.focus(f) end
+function love.quit() end
 function love.keyreleased(key)
-end
-
-function love.focus(f)
-    -- mouse in in window
-    if f then
-        print("Focus in")
-    else
-        print("Focus out")
-    end
-end
-
-function love.quit()
-    print("Thanks for playing! Come back soon!")
+    if key == 'up' then boss.player.dy = 0 end
+    if key == 'down' then boss.player.dy = 0 end
+    if key == 'left' then boss.player.dx = 0 end
+    if key == 'right' then boss.player.dx = 0 end
 end
