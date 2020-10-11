@@ -14,6 +14,7 @@ end
 
 function love.update(dt)
     boss.player.update()
+    boss.npc.update()
 end
 
 function love.draw()
@@ -22,7 +23,9 @@ function love.draw()
     love.graphics.setColor(0, 0, 0)
     love.graphics.print("ESC to quit", 10, 10)
     love.graphics.print("P toggle fullscreen", 10, 30)
+    love.graphics.print("O change monitor", 10, 50)
     boss.player.draw()
+    boss.npc.draw()
 end
 
 function love.keypressed(key)
@@ -30,6 +33,9 @@ function love.keypressed(key)
         love.event.quit(0)
     elseif key == 'p' then
         settings.fullscreen = not settings.fullscreen
+        love.window.setMode(800, 600, settings)
+    elseif key == 'o' then
+        settings.display = ((settings.display)%2)+1
         love.window.setMode(800, 600, settings)
     end
 end
