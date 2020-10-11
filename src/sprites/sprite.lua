@@ -5,7 +5,7 @@ function Sprite(x, y)
     sprite.speed = 4
     sprite.dx = 0
     sprite.dy = 0
-    sprite.color = {1, 1, 1, 0.8}
+    sprite.color = {1, 0, 1, 0.8}
 
     function sprite.update(dt)
         sprite.x = sprite.x + sprite.speed * sprite.dx

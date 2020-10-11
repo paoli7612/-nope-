@@ -1,6 +1,6 @@
 local Sprite = require('sprites/sprite')
 
-function Npc()
+function Npc(boss)
         local npc = Sprite(400, 200)
 
         return npc

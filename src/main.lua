@@ -19,7 +19,7 @@ end
 
 function love.draw()
     color = {0.6, 0.6, 0.6}
-    love.graphics.setBackgroundColor( color)
+    love.graphics.setBackgroundColor(color)
     love.graphics.setColor(0, 0, 0)
     love.graphics.print("ESC to quit", 10, 10)
     love.graphics.print("P toggle fullscreen", 10, 30)
