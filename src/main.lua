@@ -5,11 +5,11 @@ function love.load()
 end
 
 function love.update(dt)
-    -- dt from last update
+    boss.player.update()
 end
 
 function love.draw()
-
+    boss.player.draw()
 end
 
 function love.mousepressed(x, y, button)
