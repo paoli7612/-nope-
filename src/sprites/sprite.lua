@@ -17,6 +17,14 @@ function Sprite(x, y)
         love.graphics.rectangle('fill', sprite.x, sprite.y, 25, 25)
     end
 
+    function sprite.collide_with(other)
+        if math.abs(other.x - sprite.x) < 25 then
+            sprite.color = {0,0,1,1}
+        else
+            sprite.color = {0,1,0,1}
+        end
+    end
+
     return sprite
 end
 

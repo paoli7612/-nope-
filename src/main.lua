@@ -4,7 +4,7 @@ local settings = {
     fullscreentype = 'exclusive',
     resizable = false,
     borderless = true,
-    display = 1
+    display = 1 -- only if you have 2 monitors
 }
 
 function love.load()
@@ -13,8 +13,7 @@ function love.load()
 end
 
 function love.update(dt)
-    boss.player.update()
-    boss.npc.update()
+    boss.group.update(dt)
 end
 
 function love.draw()
@@ -24,8 +23,7 @@ function love.draw()
     love.graphics.print("ESC to quit", 10, 10)
     love.graphics.print("P toggle fullscreen", 10, 30)
     love.graphics.print("O change monitor", 10, 50)
-    boss.player.draw()
-    boss.npc.draw()
+    boss.group.draw()
 end
 
 function love.keypressed(key)

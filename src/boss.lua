@@ -1,11 +1,17 @@
+
+-- Sprites
+local Group = require('sprites/group')
+
 local Player = require('sprites/player')
 local Npc = require('sprites/npc')
 
 function Boss()
     local boss = {}
-    
-    boss.player = Player(boss)
-    boss.npc = Npc(boss)
+    boss.group = Group(boss) -- contiene tutti gli sprite
+
+    boss.player = Player(boss, 100, 100)
+    boss.group.add(Npc(boss, 400, 500))
+    boss.group.add(Npc(boss, 700, 200))
 
     return boss
 end

@@ -1,9 +1,10 @@
 local Sprite = require('sprites/sprite')
 
-function Player(boss)
-        local player = Sprite(100, 100)
+function Player(boss, x, y)
+        local player = Sprite(x, y)
         player.dir = "down"
         player.action = "stand"
+        player.color = {1, 0, 0, 1} -- Red
 
         local olt_update = player.update
         function player.update(dt)
