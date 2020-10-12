@@ -5,6 +5,7 @@ function Player(boss)
         player.dir = "down"
         player.action = "stand"
 
+        local olt_update = player.update
         function player.update(dt)
             if love.keyboard.isDown('up') then
                 player.dy = -1
@@ -22,12 +23,7 @@ function Player(boss)
                 player.dx = 1
                 player.dir = 'right'
             end
-            player.x = player.x + player.speed * player.dx
-            player.y = player.y + player.speed * player.dy
-        end
-
-        function player.draw()
-            boss.spritesheet.draw(player)
+            olt_update()
         end
 
         return player
