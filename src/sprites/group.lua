@@ -10,7 +10,7 @@ function Group(boss)
         boss.player.update(dt)
         for i,sprite in ipairs(group.sprites) do
             sprite.update(dt)
-            sprite.collide_with(boss.player)
+            print(sprite.collide_with(boss.player))
         end
     end
 

@@ -18,10 +18,10 @@ function Sprite(x, y)
     end
 
     function sprite.collide_with(other)
-        if math.abs(other.x - sprite.x) < 25 then
-            sprite.color = {0,0,1,1}
+        if (math.abs(other.x - sprite.x) < 25) and (math.abs(other.y - sprite.y) < 25) then
+            return true
         else
-            sprite.color = {0,1,0,1}
+            return false
         end
     end
 
