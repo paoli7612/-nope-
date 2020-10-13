@@ -16,7 +16,9 @@ settings.interface = {
     WIDTH = settings.WIDTH - 40,
     HEIGHT = 130,
     X = 20,
-    Y = settings.HEIGHT - 150
+    Y = settings.HEIGHT - 150,
+    TX = 50,
+    TY = settings.HEIGHT - 100
 }
 
 return settings
