@@ -28,14 +28,6 @@ function Player(boss, x, y)
             olt_update()
         end
 
-        function player.collide_with(sprite)
-            if (math.abs(sprite.x - player.x) < 25) and (math.abs(sprite.y - player.y) < 25) then
-                return true
-            else
-                return false
-            end
-        end
-
         return player
 end
 
