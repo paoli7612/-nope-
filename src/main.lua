@@ -30,7 +30,8 @@ function love.keypressed(key)
         boss.settings.window.display = ((boss.settings.window.display)%2)+1
         love.window.setMode(800, 600, boss.settings.window)
     elseif key == 'i' then
-        boss.interface.toggle()
+        boss.interface.chat.toggle()
+        boss.interface.chat.write('Abbiamo tutti il diritto, a una certa ora, di sentirci bene, un altra persona')
     end
 end
 function love.keyreleased(key)

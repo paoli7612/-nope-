@@ -9,8 +9,8 @@ local Npc = require('sprites/npc')
 
 function Boss()
     local boss = {}
-    boss.interface = Interface(boss)
     boss.settings = require('settings')
+    boss.interface = Interface(boss)
     boss.group = Group(boss) -- contiene tutti gli sprite
 
     boss.player = Player(boss, 100, 100)

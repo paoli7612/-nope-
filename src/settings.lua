@@ -13,12 +13,20 @@ settings.window = {
 }
 
 settings.interface = {
-    WIDTH = settings.WIDTH - 40,
-    HEIGHT = 130,
-    X = 20,
-    Y = settings.HEIGHT - 150,
-    TX = 50,
-    TY = settings.HEIGHT - 100
+    chat = {
+        x = 20,
+        y = settings.HEIGHT - 150,
+        w = settings.WIDTH - 40,
+        h = 130,
+        m = 10
+    },
+    inventory = {
+        x = settings.WIDTH - 420,
+        y = 20,
+        w = 400,
+        h = 400,
+        m = 20
+    }
 }
 
 return settings
