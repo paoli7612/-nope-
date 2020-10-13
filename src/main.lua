@@ -6,7 +6,7 @@ function love.load()
 end
 
 function love.update(dt)
-    boss.group.update(dt)
+    boss.update(dt)
 end
 
 function love.draw()
@@ -16,7 +16,8 @@ function love.draw()
     love.graphics.print("ESC to quit", 10, 10)
     love.graphics.print("P toggle fullscreen", 10, 30)
     love.graphics.print("O change monitor", 10, 50)
-    boss.group.draw()
+    love.graphics.print("I toggle interface", 10, 70)
+    boss.draw()
 end
 
 function love.keypressed(key)
@@ -28,6 +29,8 @@ function love.keypressed(key)
     elseif key == 'o' then
         boss.settings.window.display = ((boss.settings.window.display)%2)+1
         love.window.setMode(800, 600, boss.settings.window)
+    elseif key == 'i' then
+        boss.interface.toggle()
     end
 end
 function love.keyreleased(key)

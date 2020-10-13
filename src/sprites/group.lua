@@ -7,14 +7,12 @@ function Group(boss)
     end
 
     function group.update(dt)
-        boss.player.update(dt)
         for i,sprite in ipairs(group.sprites) do
             sprite.update(dt)
         end
     end
 
     function group.draw()
-        boss.player.draw()
         for i,sprite in ipairs(group.sprites) do
             sprite.draw()
         end
