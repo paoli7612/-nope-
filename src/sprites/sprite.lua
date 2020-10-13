@@ -1,4 +1,4 @@
-function Sprite(x, y)
+function Sprite(boss, x, y)
     local sprite = {}
     sprite.x = x
     sprite.y = y
@@ -14,7 +14,7 @@ function Sprite(x, y)
 
     function sprite.draw()
         love.graphics.setColor(sprite.color)
-        love.graphics.rectangle('fill', sprite.x, sprite.y, 25, 25)
+        love.graphics.rectangle('fill', sprite.x, sprite.y, boss.settings.TILE, boss.settings.TILE)
     end
 
     return sprite

@@ -1,7 +1,7 @@
 local Sprite = require('sprites/sprite')
 
 function Npc(boss, x, y)
-        local npc = Sprite(x, y)
+        local npc = Sprite(boss, x, y)
         npc.color = {0,1,0,0.8}
 
 

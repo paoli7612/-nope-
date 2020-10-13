@@ -1,7 +1,7 @@
 local settings = {
     WIDTH = 1024,
     HEIGHT = 600,
-    TILE = 50
+    TILE = 30
 }
 
 settings.window = {

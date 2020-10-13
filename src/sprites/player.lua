@@ -1,7 +1,7 @@
 local Sprite = require('sprites/sprite')
 
 function Player(boss, x, y)
-        local player = Sprite(x, y)
+        local player = Sprite(boss, x, y)
         player.dir = "down"
         player.action = "stand"
         player.color = {1, 0, 0, 0.8} -- Red
