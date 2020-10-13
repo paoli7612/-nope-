@@ -2,7 +2,7 @@ local Boss = require('boss')
 
 function love.load()
     boss = Boss()
-    love.window.setMode(boss.settings.WIDTH, boss.settings.HEIGHT, boss.settings.window)
+    boss.settings.window_update()
 end
 
 function love.update(dt)
@@ -16,7 +16,8 @@ function love.draw()
     love.graphics.print("ESC to quit", 10, 10)
     love.graphics.print("P toggle fullscreen", 10, 30)
     love.graphics.print("O change monitor", 10, 50)
-    love.graphics.print("I toggle interface", 10, 70)
+    love.graphics.print("I toggle inventory", 10, 70)
+    love.graphics.print("U toggle chat", 10, 90)
     boss.draw()
 end
 
@@ -24,12 +25,14 @@ function love.keypressed(key)
     if key == 'escape' then
         love.event.quit(0)
     elseif key == 'p' then
-        boss.settings.window.fullscreen = not boss.settings.fullscreen
-        love.window.setMode(800, 600, boss.settings.window)
+        boss.settings.window.fullscreen = not boss.settings.window.fullscreen
+        boss.settings.window_update()
     elseif key == 'o' then
         boss.settings.window.display = ((boss.settings.window.display)%2)+1
-        love.window.setMode(800, 600, boss.settings.window)
+        boss.settings.window_update()
     elseif key == 'i' then
+        boss.interface.inventory.toggle()
+    elseif key == 'u' then
         boss.interface.chat.toggle()
         boss.interface.chat.write('Abbiamo tutti il diritto, a una certa ora, di sentirci bene, un altra persona')
     end
