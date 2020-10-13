@@ -4,8 +4,9 @@ function Player(boss, x, y)
         local player = Sprite(x, y)
         player.dir = "down"
         player.action = "stand"
-        player.color = {1, 0, 0, 1} -- Red
+        player.color = {1, 0, 0, 0.8} -- Red
 
+        -- UPDATE
         local olt_update = player.update
         function player.update(dt)
             if love.keyboard.isDown('up') then
@@ -25,6 +26,14 @@ function Player(boss, x, y)
                 player.dir = 'right'
             end
             olt_update()
+        end
+
+        function player.collide_with(sprite)
+            if (math.abs(sprite.x - player.x) < 25) and (math.abs(sprite.y - player.y) < 25) then
+                return true
+            else
+                return false
+            end
         end
 
         return player

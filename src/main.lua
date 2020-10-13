@@ -1,15 +1,10 @@
 local Boss = require('boss')
-local settings = {
-    fullscreen = false,
-    fullscreentype = 'exclusive',
-    resizable = false,
-    borderless = true,
-    display = 1 -- only if you have 2 monitors
-}
+
+local settings = require('settings')
 
 function love.load()
     boss = Boss()
-    love.window.setMode(1024, 600, settings)
+    love.window.setMode(settings.WIDTH, settings.HEIGHT, settings.window)
 end
 
 function love.update(dt)
