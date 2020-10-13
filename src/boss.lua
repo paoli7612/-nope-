@@ -1,3 +1,5 @@
+-- Inrerface
+local Interface = require('interface/interface')
 
 -- Sprites
 local Group = require('sprites/group')
@@ -7,6 +9,8 @@ local Npc = require('sprites/npc')
 
 function Boss()
     local boss = {}
+    boss.interface = Interface()
+    boss.settings = require('settings')
     boss.group = Group(boss) -- contiene tutti gli sprite
 
     boss.player = Player(boss, 100, 100)

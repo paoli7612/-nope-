@@ -1,10 +1,8 @@
 local Boss = require('boss')
 
-local settings = require('settings')
-
 function love.load()
     boss = Boss()
-    love.window.setMode(settings.WIDTH, settings.HEIGHT, settings.window)
+    love.window.setMode(boss.settings.WIDTH, boss.settings.HEIGHT, boss.settings.window)
 end
 
 function love.update(dt)
@@ -25,11 +23,11 @@ function love.keypressed(key)
     if key == 'escape' then
         love.event.quit(0)
     elseif key == 'p' then
-        settings.fullscreen = not settings.fullscreen
-        love.window.setMode(800, 600, settings)
+        boss.settings.window.fullscreen = not boss.settings.fullscreen
+        love.window.setMode(800, 600, boss.settings.window)
     elseif key == 'o' then
-        settings.display = ((settings.display)%2)+1
-        love.window.setMode(800, 600, settings)
+        boss.settings.window.display = ((boss.settings.window.display)%2)+1
+        love.window.setMode(800, 600, boss.settings.window)
     end
 end
 function love.keyreleased(key)
