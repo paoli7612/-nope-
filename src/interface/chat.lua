@@ -14,7 +14,7 @@ function Chat(boss)
         old_draw()
         if chat.active then
             love.graphics.setColor(0.1, 0, 0.2, 0.4)
-            love.graphics.print(text, s.x + s.m, s.y + s.m, 0, 1.5)
+            love.graphics.print(text, s.x, s.y + s.h/2, 0, 1.5, 1.5, -s.m, s.m)
         end
     end
 
