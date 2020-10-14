@@ -5,7 +5,6 @@ function Player(boss, x, y)
         player.dir = "down"
         player.action = "stand"
         player.color = {1, 0, 0, 0.8} -- Red
-        player.quad = boss.spritesheet.get_npc(1)
 
         -- UPDATE
         local olt_update = player.update
@@ -29,11 +28,6 @@ function Player(boss, x, y)
             olt_update()
         end
 
-        local old_draw = player.draw
-        function player.draw()
-            old_draw()
-            boss.spritesheet.draw(player.quad)
-        end
         return player
 end
 
