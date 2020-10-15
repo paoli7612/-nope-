@@ -16,16 +16,16 @@ function Spritesheet(boss)
         y = y*4
         local quads = {}
         quads["down"] = {}
-        quads["down"]["stand"] = {get_quad(1+x,0+y)}
-        quads["down"]["walk"] = {get_quad(0+x,0+y),get_quad(2+x,0+y)}
+        quads["down"]["stand"] = {get_quad(1+x,0+y), get_quad(1+x,0+y)}
+        quads["down"]["walk"] = {get_quad(0+x,0+y), get_quad(2+x,0+y)}
         quads["right"] = {}
-        quads["right"]["stand"] = {get_quad(1+x,2+y)}
+        quads["right"]["stand"] = {get_quad(1+x,2+y), get_quad(1+x,2+y)}
         quads["right"]["walk"] = {get_quad(0+x,2+y),get_quad(2+x,2+y)}
         quads["left"] = {}
-        quads["left"]["stand"] = {get_quad(1+x,1+y)}
+        quads["left"]["stand"] = {get_quad(1+x,1+y), get_quad(1+x,1+y)}
         quads["left"]["walk"] = {get_quad(0+x,1+y),get_quad(2+x,1+y)}
         quads["up"] = {}
-        quads["up"]["stand"] = {get_quad(1+x,3+y)}
+        quads["up"]["stand"] = {get_quad(1+x,3+y), get_quad(1+x,3+y)}
         quads["up"]["walk"] = {get_quad(0+x,3+y),get_quad(2+x,3+y)}
         return quads
     end

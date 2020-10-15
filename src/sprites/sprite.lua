@@ -2,7 +2,7 @@ function Sprite(boss, x, y)
     local sprite = {}
     sprite.x = x
     sprite.y = y
-    sprite.speed = 4
+    sprite.speed = 1
     sprite.dx = 0
     sprite.dy = 0
     sprite.color = {1, 0, 1, 0.8}
@@ -10,6 +10,7 @@ function Sprite(boss, x, y)
     function sprite.update(dt)
         sprite.x = sprite.x + sprite.speed * sprite.dx
         sprite.y = sprite.y + sprite.speed * sprite.dy
+        print(sprite.dx, sprite.dy)
     end
 
     function sprite.draw()

@@ -2,7 +2,6 @@ local Npc = require('sprites/npc')
 
 function Player(boss, x, y)
         local player = Npc(boss, x, y)
-        player.quad = boss.spritesheet.quads_npc(6, 2)
         player.color = {1, 0, 0, 0.8} -- Red
 
         -- UPDATE
@@ -24,7 +23,7 @@ function Player(boss, x, y)
                 player.dx = 1
                 player.dir = 'right'
             end
-            olt_update()
+            olt_update(dt)
         end
 
         return player

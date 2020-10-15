@@ -13,7 +13,6 @@ function Group(boss)
     end
 
     function group.draw()
-        boss.player.draw()
         for i,sprite in ipairs(group.sprites) do
             sprite.draw()
         end
