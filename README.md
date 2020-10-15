@@ -1,7 +1,7 @@
 # Modena
 
-<img src="doc/img/001.png"/></br></br>
-<img src="doc/img/002.png"/>
+<img src="doc/img/002.png"/></br></br>
+<img src="doc/img/003.png"/></br></br>
 
 - ### main file `main.lua`
     Primo file che love utilizza.
@@ -35,10 +35,7 @@
     - ### Spritesheet classe `images/spritesheet`
         Ritaglia i **quad** da dare agli sprite.
         Poi vengono utilizzati per "printare" il pezzo dell'immagine dello spritesheeet
-        <div style="overflow: hidden; height: 64px; width: 100%">
-            <img src="src/images/npc.png">
-        </div>
-        ...
+        <img src="doc/img/spritesheet.png">
 - ### sprites folder `sprites/`
     - #### Group classe `sprites/group.lua`
         Grouppo di sprite (tipo pygame insomma)
