@@ -8,3 +8,33 @@ La guerra per la secchia rapita si protrae per qualche tempo fra battaglie, duel
 Alla fine il conflitto si conclude grazie a trattative condotte da un legato pontificio, che stabiliscono le seguenti condizioni:
 
 **i bolognesi possono tenersi re Enzo, fatto prigioniero durante la battaglia di Fossalta; i modenesi, la secchia.**
+
+<table>
+    <tr>
+        <td rowspan="3">Modena</td>
+        <td>Marte</td>
+        <td><img src="Marte.png" /></td>
+        <td> Dio della guerra </td>
+    </tr>
+    <tr>
+        <td>Venere</td>
+        <td><img src="Venere.png" /></td>
+        <td> Dea della bellezza </td>
+    </tr>
+    <tr>
+        <td>Bacco</td>
+        <td><img src="Bacco.png" /></td>
+        <td> Dio del vino </td>
+    </tr>
+    <tr>
+        <td rowspan="2">Bologna</td>
+        <td>Apollo</td>
+        <td><img src="Apollo.png" /></td>
+        <td>Dio del sole</td>
+    </tr>
+    <tr>
+        <td>Minerva</td>
+        <td><img src="Minerva.png" /></td>
+        <td>Dea della sapienza</td>
+    </tr>
+</table>
