@@ -31,6 +31,14 @@
     - dimensione **tile**
     - posizione e grandezza della chat
     - posizione e grandezza del inventario
+- ### images folder `images/`
+    - ### Spritesheet classe `images/spritesheet`
+        Ritaglia i **quad** da dare agli sprite.
+        Poi vengono utilizzati per "printare" il pezzo dell'immagine dello spritesheeet
+        <div style="overflow: hidden; height: 64px; width: 100%">
+            <img src="src/images/npc.png">
+        </div>
+        ...
 - ### sprites folder `sprites/`
     - #### Group classe `sprites/group.lua`
         Grouppo di sprite (tipo pygame insomma)
