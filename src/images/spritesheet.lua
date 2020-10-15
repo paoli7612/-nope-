@@ -8,11 +8,12 @@ function Spritesheet(boss)
 
     function spritesheet.draw(x, y, quad)
         love.graphics.setColor(1, 1, 1, 1)
-        print(quad)
-        love.graphics.draw(image, x, y) -- correct for float to int
+        love.graphics.draw(image, quad, x, y, 0) -- correct for float to int
     end
 
     function spritesheet.quads_npc(x, y)
+        x = x*3
+        y = y*4
         local quads = {}
         quads["down"] = {}
         quads["down"]["stand"] = {get_quad(1+x,0+y)}

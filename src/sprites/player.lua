@@ -1,9 +1,8 @@
-local Sprite = require('sprites/sprite')
+local Npc = require('sprites/npc')
 
 function Player(boss, x, y)
-        local player = Sprite(boss, x, y)
-        player.dir = "down"
-        player.action = "stand"
+        local player = Npc(boss, x, y)
+        player.quad = boss.spritesheet.quads_npc(6, 2)
         player.color = {1, 0, 0, 0.8} -- Red
 
         -- UPDATE
