@@ -2,7 +2,7 @@ function Sprite(boss, x, y)
     local sprite = {}
     sprite.x = x
     sprite.y = y
-    sprite.speed = 1
+    sprite.speed = 2
     sprite.dx = 0
     sprite.dy = 0
     sprite.color = {1, 0, 1, 0.8}

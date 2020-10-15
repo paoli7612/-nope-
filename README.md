@@ -1,3 +1,10 @@
+### Windows
+ - Scarica la Repository completa ed esegui `run_win.bat`
+
+### Linux (...)
+ - `$ sudo apt-get install love`
+ - `$ love src`
+
 # Modena
 
 <img src="doc/img/002.png"/></br></br>

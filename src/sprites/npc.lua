@@ -15,7 +15,6 @@ function Npc(boss, x, y)
 
         local old_update = npc.update
         function npc.update(dt)
-            print(npc.dx, npc.dy)
             dtotal = dtotal + dt
             if dtotal >= 0.1 then
                 npc.switch_frame()
