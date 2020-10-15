@@ -1,4 +1,5 @@
 local Sprite = require('sprites/sprite')
+local Stats = require('sprites/stats/stats')
 
 function Npc(boss, x, y)
         local npc = Sprite(boss, x, y)
@@ -7,6 +8,8 @@ function Npc(boss, x, y)
         npc.action = "walk"
         npc.frame = 1
         npc.quad = boss.spritesheet.quads_npc(love.math.random(0, 7), love.math.random(0,4))
+
+        npc.stats = Stats(boss)
 
         local dtotal = 0
 
@@ -26,6 +29,9 @@ function Npc(boss, x, y)
         function npc.draw()
             -- old_draw()
             boss.spritesheet.draw(npc.x, npc.y, npc.quad[npc.dir][npc.action][npc.frame])
+            if boss.settings.stats then
+                npc.stats.draw(npc.x, npc.y)
+            end
         end
 
         function npc.control_collide()

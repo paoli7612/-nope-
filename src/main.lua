@@ -10,6 +10,7 @@ function love.update(dt)
 end
 
 function love.draw()
+    boss.draw()
     color = {0.6, 0.6, 0.6}
     love.graphics.setBackgroundColor(color)
     love.graphics.setColor(0, 0, 0)
@@ -18,7 +19,7 @@ function love.draw()
     love.graphics.print("O change monitor", 10, 50)
     love.graphics.print("I toggle inventory", 10, 70)
     love.graphics.print("U toggle chat", 10, 90)
-    boss.draw()
+    love.graphics.print("Y toggle stas npc", 10, 110)
 end
 
 function love.keypressed(key)
@@ -28,13 +29,16 @@ function love.keypressed(key)
         boss.settings.window.fullscreen = not boss.settings.window.fullscreen
         boss.settings.window_update()
     elseif key == 'o' then
-        boss.settings.window.display = ((boss.settings.window.display)%2)+1
+        if boss.settings.window.display == 1 then boss.settings.window.display = 2
+        else boss.settings.window.display = 1 end
         boss.settings.window_update()
     elseif key == 'i' then
         boss.interface.inventory.toggle()
     elseif key == 'u' then
         boss.interface.chat.toggle()
         boss.interface.chat.write('Abbiamo tutti il diritto, a una certa ora, di sentirci bene, un altra persona')
+    elseif key == 'y' then
+        boss.settings.stats = not boss.settings.stats
     end
 end
 function love.keyreleased(key)

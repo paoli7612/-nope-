@@ -10,7 +10,6 @@ function Sprite(boss, x, y)
     function sprite.update(dt)
         sprite.x = sprite.x + sprite.speed * sprite.dx
         sprite.y = sprite.y + sprite.speed * sprite.dy
-        print(sprite.dx, sprite.dy)
     end
 
     function sprite.draw()
