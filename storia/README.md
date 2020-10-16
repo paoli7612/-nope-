@@ -40,4 +40,15 @@ Alla fine il conflitto si conclude grazie a trattative condotte da un legato pon
 </table>
 
 ### El Cid
-La spagna cristiana, suddivisa in **Castiglia** e **Lèon**, fu suddivisa rispettivamente tra i due fratelli, **re Sancho** e **re Alfonso**. Regni in guerra fin da subito che vedono la partecipazione di **Rodrigo Diaz de Bivar**(El Cid) tra i capitani di **re Sancho**.
+La spagna cristiana, composta da **Castiglia** e **Lèon**, fu suddivisa rispettivamente tra i due fratelli, **re Sancho** e **re Alfonso**. Regni in guerra fin da subito che vedono la partecipazione di **Rodrigo Diaz de Bivar**(El Cid) tra i capitani di **re Sancho**. **Re Alfonso** venne catturato dagli uomini di **El Cid**, durante la battaglia **Golpejera**.
+
+I nobili di **Leòn**, progettarono e attuarono un agguato che causò la morte di **re Sancho**. **Alfonso** ormai libero tornò a **Leòn** e ritrovandosi la **Castiglia** senza eredi, allargò il suo dominio all'intera Spagna cristiana.
+
+**El Cid** anche se non in ottimo rapporti con **Alfonso**, mantenne il giramento e continuò a servire il suo "nuovo" padrone.
+
+
+
+
+
+
+m
