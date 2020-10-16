@@ -38,3 +38,6 @@ Alla fine il conflitto si conclude grazie a trattative condotte da un legato pon
         <td>Dea della sapienza</td>
     </tr>
 </table>
+
+### El Cid
+La spagna cristiana, suddivisa in **Castiglia** e **Lèon**, fu suddivisa rispettivamente tra i due fratelli, **re Sancho** e **re Alfonso**. Regni in guerra fin da subito che vedono la partecipazione di **Rodrigo Diaz de Bivar**(El Cid) tra i capitani di **re Sancho**.
