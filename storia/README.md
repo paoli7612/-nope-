@@ -46,9 +46,8 @@ I nobili di **Leòn**, progettarono e attuarono un agguato che causò la morte d
 
 **El Cid** anche se non in ottimo rapporti con **Alfonso**, mantenne il giramento e continuò a servire il suo "nuovo" padrone.
 
-
-
-
-
-
-m
+### Montezuma
+### Giovanna D'Arco
+### Federico Barbarossa
+### Wiliam Wallace
+### Attila l'unno
