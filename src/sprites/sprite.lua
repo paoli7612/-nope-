@@ -8,8 +8,13 @@ function Sprite(boss, x, y)
     sprite.color = {1, 0, 1, 0.8}
 
     function sprite.update(dt)
-        sprite.x = sprite.x + sprite.speed * sprite.dx
-        sprite.y = sprite.y + sprite.speed * sprite.dy
+        if (not (sprite.dx == 0) and (not (sprite.dy == 0))) then
+            sprite.x = sprite.x + sprite.speed * sprite.dx * 0.6
+            sprite.y = sprite.y + sprite.speed * sprite.dy * 0.6
+        else
+            sprite.x = sprite.x + sprite.speed * sprite.dx
+            sprite.y = sprite.y + sprite.speed * sprite.dy
+        end
     end
 
     function sprite.draw()
