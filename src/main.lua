@@ -36,9 +36,11 @@ function love.keypressed(key)
         boss.interface.inventory.toggle()
     elseif key == 'u' then
         boss.interface.chat.toggle()
-        boss.interface.chat.write('Abbiamo tutti il diritto, a una certa ora, di sentirci bene, un altra persona')
+        boss.interface.chat.write({{'Questa è la chat (premi spazio)'}, {'Ora cambia il testo (premi spazio)'}})
     elseif key == 'y' then
         boss.settings.stats = not boss.settings.stats
+    elseif key == 'space' then
+        boss.interface.chat.next()
     end
 end
 function love.keyreleased(key)

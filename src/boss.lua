@@ -12,6 +12,7 @@ local Spritesheet = require('images/spritesheet')
 
 function Boss()
     local boss = {}
+    boss.pause = false
     boss.settings = require('settings')
     boss.interface = Interface(boss)
     boss.spritesheet = Spritesheet(boss)
@@ -22,8 +23,10 @@ function Boss()
     boss.group.add(Npc(boss, 700, 200))
 
     function boss.update(dt)
-        boss.player.update(dt)
-        boss.group.update(dt)
+        if not boss.pause then
+            boss.player.update(dt)
+            boss.group.update(dt)
+        end
     end
 
     function boss.draw()
