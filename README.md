@@ -1,15 +1,12 @@
+# Run
 ### Windows
  - Scarica la Repository completa ed esegui `run_win.bat`
-
 ### Linux (...)
  - `$ sudo apt-get install love`
  - `$ love src`
 
-# Modena
-
-<img src="doc/img/002.png"/></br></br>
-<img src="doc/img/003.png"/></br></br>
-
+ <img src="doc/img/004.png"/></br></br>
+# Game
 - ### main file `main.lua`
     Primo file che love utilizza.
     - Viene creato l'oggetto **boss**
