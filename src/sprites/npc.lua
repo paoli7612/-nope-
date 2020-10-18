@@ -28,9 +28,7 @@ function Npc(boss, x, y)
         function npc.draw()
             -- old_draw()
             boss.spritesheet.draw(npc.x, npc.y, npc.quad[npc.dir][npc.action][npc.frame])
-            if boss.settings.stats then
-                npc.stats.draw(npc.x, npc.y)
-            end
+            npc.stats.draw(npc.x, npc.y)
         end
 
         function npc.control_collide()
