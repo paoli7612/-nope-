@@ -1,7 +1,6 @@
-function Spritesheet(boss)
+function Spritesheet(boss, name)
     local spritesheet = {}
     local image = love.graphics.newImage('images/npc.png')
-
     function get_quad(x, y)
         return love.graphics.newQuad(x*32, y*32, 32, 32, image:getDimensions())
     end

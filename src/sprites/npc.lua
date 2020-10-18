@@ -3,11 +3,13 @@ local Stats = require('sprites/stats/stats')
 
 function Npc(boss, x, y)
         local npc = Sprite(boss, x, y)
+        local spritesheet = boss.spritesheet.npc
         npc.color = {0,1,0,0.8}
         npc.dir = "down"
         npc.action = "walk"
         npc.frame = 1
-        npc.quad = boss.spritesheet.quads_npc(love.math.random(0, 7), love.math.random(0,4))
+        print(spritesheet.asd)
+        npc.quad = spritesheet.quads_npc(love.math.random(0, 7), love.math.random(0,4))
 
         npc.stats = Stats(boss)
 
@@ -27,7 +29,7 @@ function Npc(boss, x, y)
         local old_draw = npc.draw
         function npc.draw()
             -- old_draw()
-            boss.spritesheet.draw(npc.x, npc.y, npc.quad[npc.dir][npc.action][npc.frame])
+            spritesheet.draw(npc.x, npc.y, npc.quad[npc.dir][npc.action][npc.frame])
             npc.stats.draw(npc.x, npc.y)
         end
 
