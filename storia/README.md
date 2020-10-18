@@ -47,6 +47,9 @@ I nobili di **Leòn**, progettarono e attuarono un agguato che causò la morte d
 **El Cid** anche se non in ottimo rapporti con **Alfonso**, mantenne il giramento e continuò a servire il suo "nuovo" padrone.
 
 ### Montezuma
+
+**Cuaohtemoc**, guerriero acquila di **Tenochtitlan**, interroga veggenti e stregoni, in seguito a delle apparizioni e dei segni intravvisti nella foresta. Le uniche risposte che ottenne anche allertando i monaci della capitale, furono: "gli dei reclamano più sacrifici" e "**Quetzalcoatl**, il serpente piumato, sta tornando dal suo esilio". **Montezuma** allarmato, concentrò i suoi guerrieri per mantenere controllati i tempi di **Quetzalcoatl**. **Xochimilco** e **Platinucco**, troppo vicini ai monasteri, e da sempre nemici degli aztechi, furono sconfitti e conquistati, e l'ottenimento di prigionieri aumento i sacrifici fattibili agli dei. Al ritorno nella capitale, **Cuaohtemoc** fu promosso a guerrieri giaguaro. Un ulteriore presagio, appare sotto gli occhi di **Montezuma**: il tempio del dio **Huitzlopochtli**, nella capitale, bruciò sotto alte fiamme, seppure fatto di pietra. Al tentativo dei cittadini di spegnere le fiamme con l'acqua, il fuoco si alzò ancora di più. Con un ulteriore conferma dai sacerdoti della capitale, **Montezuma** con l'appoggio della **triplice alleanza** (con altre due città stato azteche), dichiara guerra a **Tlaxcala**: nemico principale della **triplice alleanza**. Giaguari e Aquile contro Aironi (simbolo di Tlaxcala). Neanche cominciata la guerra che giunge **Cortes** e gli spagnoli dal mare, scambiati dagli aztechi per **Quetzalcoatl** ed altre divinità (Per le tecnologi sconosciute, i cavalli, le usanza, le armi, le armature...)
+
 ### Giovanna D'Arco
 ### Federico Barbarossa
 ### Wiliam Wallace
