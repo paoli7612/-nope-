@@ -8,9 +8,8 @@ function Npc(boss, x, y)
         npc.dir = "down"
         npc.action = "walk"
         npc.frame = 1
-        print(spritesheet.asd)
         npc.quad = spritesheet.quads_npc(love.math.random(0, 7), love.math.random(0,4))
-
+        print("npc", npc.quad)
         npc.stats = Stats(boss)
 
         local dtotal = 0

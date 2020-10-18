@@ -1,6 +1,8 @@
 function Spritesheet(boss, name)
     local spritesheet = {}
-    local image = love.graphics.newImage('images/npc.png')
+    spritesheet.name = name
+    local image = love.graphics.newImage('images/'..name..'.png')
+
     function get_quad(x, y)
         return love.graphics.newQuad(x*32, y*32, 32, 32, image:getDimensions())
     end
@@ -28,6 +30,8 @@ function Spritesheet(boss, name)
         quads["up"]["walk"] = {get_quad(0+x,3+y),get_quad(2+x,3+y)}
         return quads
     end
+
+    spritesheet.get_quad = get_quad
 
     return spritesheet
 end

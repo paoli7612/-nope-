@@ -18,7 +18,6 @@ function Chat(boss)
             boss.pause = false
             chat.toggle()
         end
-        print("len", #text)
     end
 
     local old_draw = chat.draw
