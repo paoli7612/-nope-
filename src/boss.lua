@@ -24,8 +24,10 @@ function Boss()
 
     boss.player = Player(boss, 100, 500)
     boss.group.add(Npc(boss, 700, 200))
-    for i=1,3 do
-        boss.group.add(Decor(boss, 100*i, 100*i, {i, 2}))
+    for n=0,1 do
+        for i=0,2 do
+            boss.group.add(Decor(boss, boss.settings.TILE*i + 400, boss.settings.TILE*n + 400, {i, n+2}))
+        end
     end
 
     function boss.update(dt)
