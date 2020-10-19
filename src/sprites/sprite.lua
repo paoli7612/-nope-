@@ -25,6 +25,10 @@ function Sprite(boss, x, y)
         love.graphics.rectangle('fill', sprite.x, sprite.y, boss.settings.TILE, boss.settings.TILE)
     end
 
+    function sprite.interact()
+        print("Hi i'm a sprite")
+    end
+
     return sprite
 end
 

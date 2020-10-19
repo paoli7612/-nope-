@@ -51,6 +51,11 @@ function Npc(boss, x, y)
             end
         end
 
+        function npc.interact()
+            boss.interface.chat.write({"a","b","c"})
+            boss.interface.chat.toggle()
+        end
+
         return npc
 end
 
