@@ -40,7 +40,7 @@ function love.keypressed(key)
     elseif key == 'y' then
         boss.settings.stats = not boss.settings.stats
     elseif key == 'space' then
-        boss.interface.chat.next()
+        boss.player.interact()
     end
 end
 function love.keyreleased(key)

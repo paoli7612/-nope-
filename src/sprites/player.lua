@@ -26,6 +26,25 @@ function Player(boss, x, y)
             olt_update(dt)
         end
 
+        function player.interact()
+            local x = player.x
+            local y = player.y
+            local g = boss.settings.TILE
+            if player.dir == 'up' then
+                y = y - g
+            elseif player.dir == 'down' then
+                y = y + g
+            elseif player.dir == 'left' then
+                x = x - g
+            elseif player.dir == 'right' then
+                x = x + g
+            end
+            local sprite = boss.group.get(x, y)
+            if sprite then
+                print(sprite)
+            end
+        end
+
         return player
 end
 

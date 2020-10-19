@@ -28,6 +28,16 @@ function Group(boss)
         end
     end
 
+    -- Restituisce se presente lo sprite che sta a queste coordinate
+    function group.get(x, y)
+        for i,sprite in ipairs(group.sprites) do
+            if (math.abs(sprite.y - y) < 30) and (math.abs(sprite.x - x) < 20) then
+                return sprite
+            end
+        end
+    end
+
+
     return group
 end
 
