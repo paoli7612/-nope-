@@ -10,6 +10,10 @@ function Decor(boss, x, y)
         spritesheet.draw(x, y, decor.quad)
     end
 
+    function decor.change(x, y)
+        decor.quad = spritesheet.get_quad(x, y)
+    end
+
     return decor
 end
 
