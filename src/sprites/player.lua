@@ -41,7 +41,7 @@ function Player(boss, x, y)
             end
             local sprite = boss.group.get(x, y)
             if sprite then
-                sprite.interact()
+                sprite.use()
             end
         end
 

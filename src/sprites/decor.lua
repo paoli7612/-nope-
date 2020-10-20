@@ -5,6 +5,7 @@ function Decor(boss, x, y, q)
     local spritesheet = boss.spritesheet.decor
     decor.quad = spritesheet.get_quad(q[1], q[2])
     decor.color = {0, 1, 0, 1}
+    decor.descrizione = 'just a decor'
 
     function decor.draw()
         spritesheet.draw(x, y, decor.quad)

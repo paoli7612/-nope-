@@ -51,8 +51,8 @@ function Npc(boss, x, y)
             end
         end
 
-        function npc.interact()
-            boss.interface.chat.write({"a","b","c"})
+        function npc.use()
+            boss.interface.chat.write({"Ciao sono uno sprite","Continuo a parlare per provare la chat","E vedere se il resto del gioco è in pausa mentre parlo"})
             boss.interface.chat.toggle()
         end
 

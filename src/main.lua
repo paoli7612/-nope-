@@ -18,7 +18,6 @@ function love.draw()
     love.graphics.print("P toggle fullscreen", 10, 30)
     love.graphics.print("O change monitor", 10, 50)
     love.graphics.print("I toggle inventory", 10, 70)
-    love.graphics.print("U toggle chat", 10, 90)
     love.graphics.print("Y toggle stas npc", 10, 110)
 end
 
@@ -34,9 +33,6 @@ function love.keypressed(key)
         boss.settings.window_update()
     elseif key == 'i' then
         boss.interface.inventory.toggle()
-    elseif key == 'u' then
-        boss.interface.chat.toggle()
-        boss.interface.chat.write({{'Questa è la chat (premi spazio)'}, {'Ora cambia il testo (premi spazio)'}})
     elseif key == 'y' then
         boss.settings.stats = not boss.settings.stats
     elseif key == 'space' then
