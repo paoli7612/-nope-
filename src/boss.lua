@@ -35,6 +35,7 @@ function Boss()
         boss.group.draw()
         boss.player.draw()
         boss.interface.draw()
+        boss.settings.draw()
     end
 
     return boss
