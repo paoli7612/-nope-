@@ -16,9 +16,9 @@ function Test(boss)
 
     add(Npc, 6, 6, {3, 3})
 
-    for n=0,1 do
+    for n=2,4 do
         for i=0,2 do
-            add(Decor, i+2, n+2, {i, n+2})
+            add(Decor, i+5, n, {i, n})
         end
     end
 
