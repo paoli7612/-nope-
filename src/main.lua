@@ -13,12 +13,7 @@ function love.draw()
     boss.draw()
     color = {0.6, 0.6, 0.6}
     love.graphics.setBackgroundColor(color)
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.print("ESC to quit", 10, 10)
-    love.graphics.print("P toggle fullscreen", 10, 30)
-    love.graphics.print("O change monitor", 10, 50)
-    love.graphics.print("I toggle inventory", 10, 70)
-    love.graphics.print("Y toggle stas npc", 10, 110)
+    
 end
 
 function love.keypressed(key)
