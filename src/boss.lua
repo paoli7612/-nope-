@@ -1,5 +1,5 @@
 -- map
-local Test = require('map')
+local Maps = require('maps/maps')
 
 -- Inrerface
 local Interface = require('interface/interface')
@@ -18,8 +18,7 @@ function Boss()
     boss.spritesheet = {}
     boss.spritesheet.decor = Spritesheet(boss, 'decor')
     boss.spritesheet.npc = Spritesheet(boss, 'npc')
-
-    boss.group = Test(boss)
+    boss.maps = Maps(boss)
 
     boss.player = Player(boss, 100, 500)
 
