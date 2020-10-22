@@ -8,7 +8,8 @@ class Game:
             self.clock = pygame.time.Clock()
             self.spritesheet = Spritesheet(self)
             self.sprites = pygame.sprite.Group()
-            Sprite(self.sprites, self, 10, 10, (2, 2)).get_image('npc', 4, 4)
+            Sprite(self.sprites, self, 640, 320, (2, 2)).get_image('npc', 4, 4)
+            Sprite(self.sprites, self, 320, 320, (2, 2)).get_image('decor', 4, 4)
 
             self.selected = None
 
@@ -24,22 +25,28 @@ class Game:
 
     def event(self):
         for event in pygame.event.get():
-            print(event)
             if event.type == pygame.QUIT:
                 self.running = False
             else:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if self.selected:
-                        pass
+                        self.selected = None
                     else:
-                        print(pygame.mouse.get_pos())
+                        pos = pygame.sprite.Sprite()
+                        pos.rect = pygame.rect.Rect(0, 0, 2, 2)
+                        pos.rect.center = pygame.mouse.get_pos()
                         for sprite in self.sprites:
-                            pass
+                            if pygame.sprite.collide_rect(sprite, pos):
+                                self.selected = sprite
+                                break;
 
     def update(self):
         self.sprites.update()
+        if self.selected:
+            self.selected.rect.center = pygame.mouse.get_pos()
 
     def draw(self):
+        self.screen.fill((255, 255, 255))
         self.sprites.draw(self.screen)
         pygame.display.flip()
 
