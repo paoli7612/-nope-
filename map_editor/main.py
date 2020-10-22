@@ -1,9 +1,14 @@
 import pygame
+from sprite import Sprite
 
 class Game:
     def __init__(self):
-            self.window = pygame.display.set_mode((400, 400))
+            self.screen = pygame.display.set_mode((1024, 600))
             self.clock = pygame.time.Clock()
+            self.sprites = pygame.sprite.Group()
+
+            s = Sprite(self.sprites, 10, 10)
+
             self.loop()
 
     def loop(self):
@@ -20,10 +25,11 @@ class Game:
                 self.running = False
 
     def update(self):
-        pass
+        self.sprites.update()
 
     def draw(self):
-        pass
+        self.sprites.draw(self.screen)
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
