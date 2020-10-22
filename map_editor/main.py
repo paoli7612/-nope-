@@ -1,6 +1,6 @@
 import pygame
 from spritesheet import Spritesheet
-from sprite import Sprite
+from load import load
 
 class Game:
     def __init__(self):
@@ -8,11 +8,8 @@ class Game:
             self.clock = pygame.time.Clock()
             self.spritesheet = Spritesheet(self)
             self.sprites = pygame.sprite.Group()
-            Sprite(self.sprites, self, 640, 320, (2, 2)).get_image('npc', 4, 4)
-            Sprite(self.sprites, self, 320, 320, (2, 2)).get_image('decor', 4, 4)
-
             self.selected = None
-
+            load(self, 'spawn')
             self.loop()
 
     def loop(self):
@@ -49,7 +46,6 @@ class Game:
         self.screen.fill((255, 255, 255))
         self.sprites.draw(self.screen)
         pygame.display.flip()
-
 
 if __name__ == '__main__':
     g = Game()
