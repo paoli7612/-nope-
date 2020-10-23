@@ -2,7 +2,8 @@ local Group = require('sprites/group')
 
 local Class = {
     decor = require('sprites/decor'),
-    npc = require('sprites/npc')
+    npc = require('sprites/npc'),
+    wall = require('sprites/wall')
 }
 
 function Map(boss, name)

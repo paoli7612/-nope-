@@ -16,6 +16,7 @@ function Boss()
     boss.settings = require('settings')
     boss.interface = Interface(boss)
     boss.spritesheet = {}
+    boss.spritesheet.wall = Spritesheet(boss, 'wall')
     boss.spritesheet.decor = Spritesheet(boss, 'decor')
     boss.spritesheet.npc = Spritesheet(boss, 'npc')
     boss.maps = Maps(boss)
