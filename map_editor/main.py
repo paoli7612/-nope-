@@ -63,6 +63,8 @@ class Game:
                         if event.key == pygame.K_SPACE:
                             self.options.selected = None
                             pygame.mouse.set_visible(True); return
+                        elif event.key == pygame.K_q:
+                            self.options.selected.switch_class()
                         elif event.key == pygame.K_UP:
                             self.t[1] -= 1
                         elif event.key == pygame.K_DOWN:

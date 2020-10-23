@@ -18,3 +18,13 @@ class Sprite(pygame.sprite.Sprite):
             qy = qy*4
         rect = pygame.rect.Rect(qx*32, qy*32, 32, 32)
         self.image.blit(self.game.spritesheet.sheet[className], (0,0), rect)
+
+    def switch_class(self):
+        if self.className == 'npc':
+            self.className = 'decor'
+        elif self.className == 'decor':
+            self.className = 'wall'
+        else:
+            self.className = 'npc'
+        rect = pygame.rect.Rect(self.qx*32, self.qy*32, 32, 32)
+        self.image.blit(self.game.spritesheet.sheet[self.className], (0,0), rect)
