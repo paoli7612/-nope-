@@ -59,8 +59,6 @@ class Game:
                         self.running = False
                     elif event.key == pygame.K_s:
                         save(self)
-                    elif event.key == pygame.K_n:
-                        self.options.selected = Sprite(self, 1024/2, 300, 'decor', 1, 1)
                     elif self.options.selected:
                         if event.key == pygame.K_SPACE:
                             self.options.selected = None
@@ -74,6 +72,8 @@ class Game:
                         elif event.key == pygame.K_RIGHT:
                             self.t[0] += 1
                         self.options.selected.rect.center = self.t
+                    elif event.key == pygame.K_n:
+                        self.options.selected = Sprite(self, 1024/2, 300, 'decor', 1, 1)
 
 
     def update(self):
