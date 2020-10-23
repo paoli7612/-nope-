@@ -3,12 +3,15 @@ from spritesheet import Spritesheet
 from load import load
 from save import save
 from options import Options
+from sprite import Sprite
+from os import path
 
 pygame.init()
 
 class Game:
     def __init__(self, name):
         pygame.display.set_caption('Modena editor: ' + name)
+        self.path = path.dirname(__file__)
         self.name = name
         self.options = Options(self)
         self.screen = pygame.display.set_mode((1024, 600 + self.options.rect.h))
@@ -52,21 +55,24 @@ class Game:
                         self.options.selected.rect.center = pygame.mouse.get_pos()
                         self.t = list(pygame.mouse.get_pos())
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
-                        self.options.selected = None
-                        pygame.mouse.set_visible(True)
-                        return
-                    elif event.key == pygame.K_UP:
-                        self.t[1] -= 1
-                    elif event.key == pygame.K_DOWN:
-                        self.t[1] += 1
-                    elif event.key == pygame.K_LEFT:
-                        self.t[0] -= 1
-                    elif event.key == pygame.K_RIGHT:
-                        self.t[0] += 1
+                    if event.key == pygame.K_ESCAPE:
+                        self.running = False
                     elif event.key == pygame.K_s:
                         save(self)
-                    if self.options.selected:
+                    elif event.key == pygame.K_n:
+                        self.options.selected = Sprite(self, 1024/2, 300, 'decor', 1, 1)
+                    elif self.options.selected:
+                        if event.key == pygame.K_SPACE:
+                            self.options.selected = None
+                            pygame.mouse.set_visible(True); return
+                        elif event.key == pygame.K_UP:
+                            self.t[1] -= 1
+                        elif event.key == pygame.K_DOWN:
+                            self.t[1] += 1
+                        elif event.key == pygame.K_LEFT:
+                            self.t[0] -= 1
+                        elif event.key == pygame.K_RIGHT:
+                            self.t[0] += 1
                         self.options.selected.rect.center = self.t
 
 
