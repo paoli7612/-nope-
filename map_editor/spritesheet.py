@@ -7,6 +7,5 @@ class Spritesheet:
         self.sheet['decor'] = self.get_sheet('decor')
 
     def get_sheet(self, name):
-        image = pygame.image.load('../src/images/' + name + '.png').convert()
-        image.set_colorkey((0,0,0))
+        image = pygame.image.load('../src/images/' + name + '.png').convert().convert_alpha()
         return image
