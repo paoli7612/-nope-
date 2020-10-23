@@ -53,7 +53,8 @@ class Game:
                         self.t[0] -= 1
                     elif event.key == pygame.K_RIGHT:
                         self.t[0] += 1
-                    self.selected.rect.center = self.t
+                    if self.selected:
+                        self.selected.rect.center = self.t
 
 
     def update(self):

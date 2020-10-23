@@ -10,4 +10,5 @@ def load(game, name):
             y = int(y.split('=')[1])
             qx = int(qx[4:])
             qy = int(qy[:-2])
-            Sprite(game, x, y).get_image(c, qx, qy)
+            Sprite(game, x, y, c, qx, qy)
+    file.close()
