@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 *.pyc
+=======
+map_editor/__pycache__/*
+>>>>>>> 711301f76a01d9ad8c5325913bd2af7d5d01be30
