@@ -1,8 +1,9 @@
 from sprite import Sprite
+from os import path
 
 def load(game):
     name = game.name
-    file = open('../src/maps/data/' + name + '.lua')
+    file = open(path.join(game.path, '../src/maps/data/' + name + '.lua'), 'r')
     for row in file:
         if (',' in row):
             c, x, y, qx, qy, _ = row.split(',')
