@@ -10,11 +10,8 @@ class Game:
             self.sprites = pygame.sprite.Group()
             self.selected = None
             load(self, 'spawn')
-
-            self.t = [0,0] # trasla freccie
-
+            self.t = None # trasla freccie
             self.loop()
-
 
     def loop(self):
         self.running = True
@@ -44,8 +41,11 @@ class Game:
                 elif event.type == pygame.MOUSEMOTION:
                     if self.selected:
                         self.selected.rect.center = pygame.mouse.get_pos()
+                        self.t = list(pygame.mouse.get_pos())
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_UP:
+                    if event.key == pygame.K_SPACE:
+                        self.selected = None; return
+                    elif event.key == pygame.K_UP:
                         self.t[1] -= 1
                     elif event.key == pygame.K_DOWN:
                         self.t[1] += 1
