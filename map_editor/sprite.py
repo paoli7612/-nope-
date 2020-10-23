@@ -4,6 +4,8 @@ colorkey = (12, 12, 11)
 
 class Sprite(pygame.sprite.Sprite):
     def __init__(self, game, x, y, className, qx, qy):
+        self.className = className
+        self.qx, self.qy = qx, qy
         pygame.sprite.Sprite.__init__(self, game.sprites)
         self.game = game
         self.image = pygame.Surface((32, 32))

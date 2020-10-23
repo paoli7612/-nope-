@@ -1,6 +1,7 @@
 from sprite import Sprite
 
-def load(game, name):
+def load(game):
+    name = game.name
     file = open('../src/maps/data/' + name + '.lua')
     for row in file:
         if (',' in row):

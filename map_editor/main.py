@@ -1,15 +1,18 @@
 import pygame
 from spritesheet import Spritesheet
 from load import load
+from save import save
 
 class Game:
-    def __init__(self):
+    def __init__(self, name):
+            self.name = name
+
             self.screen = pygame.display.set_mode((1024, 600))
             self.clock = pygame.time.Clock()
             self.spritesheet = Spritesheet(self)
             self.sprites = pygame.sprite.Group()
             self.selected = None
-            load(self, 'spawn')
+            load(self)
             self.t = None # trasla freccie
             self.loop()
 
@@ -53,6 +56,8 @@ class Game:
                         self.t[0] -= 1
                     elif event.key == pygame.K_RIGHT:
                         self.t[0] += 1
+                    elif event.key == pygame.K_s:
+                        save(self)
                     if self.selected:
                         self.selected.rect.center = self.t
 
@@ -66,4 +71,4 @@ class Game:
         pygame.display.flip()
 
 if __name__ == '__main__':
-    g = Game()
+    g = Game('spawn')
