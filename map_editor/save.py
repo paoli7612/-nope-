@@ -1,8 +1,10 @@
+sp = "{c='%s', x=%d, y=%d, q={%d, %d}},"
+
 def save(game):
     #file = open('../src/maps/data/' + name + '.lua', 'w')
 
     for sprite in game.sprites:
         r = sprite.rect
-        print(r.x, r.y, sprite.className, sprite.qx, sprite.qy)
+        print(sp % (sprite.className, r.x, r.y, sprite.qx, sprite.qy))
 
     #file.close()

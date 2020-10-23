@@ -2,19 +2,23 @@ import pygame
 from spritesheet import Spritesheet
 from load import load
 from save import save
+from options import Options
+
+pygame.init()
 
 class Game:
     def __init__(self, name):
-            self.name = name
-
-            self.screen = pygame.display.set_mode((1024, 600))
-            self.clock = pygame.time.Clock()
-            self.spritesheet = Spritesheet(self)
-            self.sprites = pygame.sprite.Group()
-            self.selected = None
-            load(self)
-            self.t = None # trasla freccie
-            self.loop()
+        pygame.display.set_caption('Modena editor: ' + name)
+        self.name = name
+        self.options = Options(self)
+        self.screen = pygame.display.set_mode((1024, 600 + self.options.rect.h))
+        self.clock = pygame.time.Clock()
+        self.spritesheet = Spritesheet(self)
+        self.sprites = pygame.sprite.Group()
+        self.options.selected = None
+        load(self)
+        self.t = None # trasla freccie
+        self.loop()
 
     def loop(self):
         self.running = True
@@ -30,24 +34,28 @@ class Game:
                 self.running = False
             else:
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    if self.selected:
-                        self.selected = None
+                    if self.options.selected:
+                        self.options.selected = None
+                        pygame.mouse.set_visible(True)
                     else:
                         pos = pygame.sprite.Sprite()
                         pos.rect = pygame.rect.Rect(0, 0, 2, 2)
                         pos.rect.center = pygame.mouse.get_pos()
                         for sprite in self.sprites:
                             if pygame.sprite.collide_rect(sprite, pos):
-                                self.selected = sprite
+                                self.options.selected = sprite
                                 self.t = list(sprite.rect.center)
+                                pygame.mouse.set_visible(False)
                                 break;
                 elif event.type == pygame.MOUSEMOTION:
-                    if self.selected:
-                        self.selected.rect.center = pygame.mouse.get_pos()
+                    if self.options.selected:
+                        self.options.selected.rect.center = pygame.mouse.get_pos()
                         self.t = list(pygame.mouse.get_pos())
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        self.selected = None; return
+                        self.options.selected = None
+                        pygame.mouse.set_visible(True)
+                        return
                     elif event.key == pygame.K_UP:
                         self.t[1] -= 1
                     elif event.key == pygame.K_DOWN:
@@ -58,15 +66,17 @@ class Game:
                         self.t[0] += 1
                     elif event.key == pygame.K_s:
                         save(self)
-                    if self.selected:
-                        self.selected.rect.center = self.t
+                    if self.options.selected:
+                        self.options.selected.rect.center = self.t
 
 
     def update(self):
         self.sprites.update()
+        self.options.update()
 
     def draw(self):
-        self.screen.fill((255, 255, 255))
+        self.screen.fill((240, 240, 240))
+        self.options.draw()
         self.sprites.draw(self.screen)
         pygame.display.flip()
 
