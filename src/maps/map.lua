@@ -3,7 +3,6 @@ local Group = require('sprites/group')
 local Class = {
     decor = require('sprites/decor'),
     npc = require('sprites/npc'),
-    wall = require('sprites/wall')
 }
 
 function Map(boss, name)
@@ -20,7 +19,7 @@ function Map(boss, name)
     for i, wall in ipairs(file.wall) do
         for x=wall.s[1], wall.e[1] do
             for y=wall.s[2], wall.e[2] do
-                sprite = Class['wall'](boss, x, y, wall.q)
+                sprite = Class['decor'](boss, x, y, wall.q)
                 boss.group.add(sprite)
             end
         end
