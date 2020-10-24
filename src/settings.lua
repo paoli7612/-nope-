@@ -17,6 +17,12 @@ function settings.window_update()
     love.window.setMode(settings.WIDTH, settings.HEIGHT, settings.window)
 end
 
+function settings.pixels(x, y)
+    x = x*settings.TILE
+    y = y*settings.TILE
+    return x, y
+end
+
 function settings.draw()
     love.graphics.setColor(0, 0, 0)
     love.graphics.print("ESC to quit", 10, 10)

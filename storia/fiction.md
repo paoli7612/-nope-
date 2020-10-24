@@ -1,5 +1,5 @@
 ### Melatti
-**Sarna** è un continente diviso in due: da una parte **Mali** e dall'altra **Crinione**, suddiviso a sua volta tra i due fratelli **Sovea** (re della **Cresta**) e **Aiolto** (re del **Latone**). Regni in guerra fin da subito che vedono la partecipazione di **Melatti** tra i capitanti di **Re Sovea**.
+**Sarna** è un continente diviso in due: da una parte **Mali** e dall'altra **Crinione**, suddiviso a sua volta tra i due fratelli **Sovea** (re della **Cresta**) e **Aiolto** (re del **Latone**). Regni in guerra fin dalla separazione del regno tra i 2 figli di **Crino**: re di **Crinione** morto anni fa. conflitto che vede la partecipazione di **Melatti** tra gli uomini di **Re Sovea**.
 
 Re **Aiolto** venne catturato dagli uomini di **Melatti**, durante la battaglia di **Ganiardi**.
 

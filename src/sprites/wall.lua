@@ -1,6 +1,7 @@
 local Sprite = require('sprites/sprite')
 
 function Wall(boss, x, y, q)
+    x, y = boss.settings.pixels(x, y)
     local wall = Sprite(boss, x, y)
     local spritesheet = boss.spritesheet.wall
     wall.quad = spritesheet.get_quad(q[1], q[2])
