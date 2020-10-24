@@ -11,18 +11,17 @@ class Options:
         self.selected = None
         self.n_options = 0
 
-    def write(self, keys, desc):
+    def write(self, text, x, y, color):
+        s = self.font.render(text, True, color)
+        r = s.get_rect()
+        r.topleft = (x, y)
+        self.image.blit(s, r)
+
+    def write_key(self, keys, desc):
         self.n_options  += 1
 
-        ks = self.font.render(keys, True, (255, 255, 255))
-        kr = ks.get_rect()
-        kr.topleft = (20, self.n_options*20 + 40)
-        self.image.blit(ks, kr)
-
-        ds = self.font.render(desc, True, (255, 200, 150))
-        dr = ds.get_rect()
-        dr.topleft = (380, self.n_options*20 + 40)
-        self.image.blit(ds, dr)
+        self.write(keys, 20, self.n_options*20, (255, 255, 255))
+        self.write(desc, 380, self.n_options*20, (255, 200, 150))
 
     def draw(self):
         self.game.screen.blit(self.image, self.rect)
@@ -33,13 +32,18 @@ class Options:
         if self.selected:
             text = 'Hai selezionato uno sprite'
             picture = pygame.transform.scale(self.selected.image, (96, 96))
-            self.image.blit(picture, (1024 - 100 - 48, 100-48))
+            self.image.blit(picture, (876, 52))
+            self.write(self.selected.className, 800, 150, (100, 100, 255))
+            self.write(str(self.selected.qx) + " " + str(self.selected.qy) , 880, 150, (100, 100, 255))
         self.n_options = 0
-        self.write(text, '')
-        self.write('[ARROW]','muovi sprite pixel per pixel')
-        self.write('[CLICK - Mouse]','seleziona sprite')
-        self.write('[SPAZIO] / [CLICK - Mouse]','rilascia sprite')
-        self.write('[S]','Salva')
-        self.write('[ESCAPE]','Esci')
+        self.write_key(text, '')
+        self.write_key('[ARROW]','muovi sprite pixel per pixel')
+        self.write_key('[CLICK - Mouse]','seleziona sprite')
+        self.write_key('[SPAZIO] / [CLICK - Mouse]','rilascia sprite')
+        self.write_key('[P]','Salva')
+        self.write_key('[ESCAPE]','Esci')
         if not self.selected:
-            self.write('[N]', 'Nuovo sprite')
+            self.write_key('[N]', 'Nuovo sprite')
+        else:
+            self.write_key('[Q]', 'Cambia classe')
+            self.write_key('[WASD]', 'Cambia quad')
