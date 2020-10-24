@@ -20,8 +20,8 @@ class Options:
     def write_key(self, keys, desc):
         self.n_options  += 1
 
-        self.write(keys, 20, self.n_options*20 + 10, (255, 255, 255))
-        self.write(desc, 380, self.n_options*20 + 10, (255, 200, 150))
+        self.write(keys, 20, self.n_options*20, (255, 255, 255))
+        self.write(desc, 380, self.n_options*20, (255, 200, 150))
 
     def draw(self):
         self.game.screen.blit(self.image, self.rect)
@@ -34,14 +34,16 @@ class Options:
             picture = pygame.transform.scale(self.selected.image, (96, 96))
             self.image.blit(picture, (876, 52))
             self.write(self.selected.className, 800, 150, (100, 100, 255))
+            self.write(str(self.selected.qx) + " " + str(self.selected.qy) , 880, 150, (100, 100, 255))
         self.n_options = 0
         self.write_key(text, '')
         self.write_key('[ARROW]','muovi sprite pixel per pixel')
         self.write_key('[CLICK - Mouse]','seleziona sprite')
         self.write_key('[SPAZIO] / [CLICK - Mouse]','rilascia sprite')
-        self.write_key('[S]','Salva')
+        self.write_key('[P]','Salva')
         self.write_key('[ESCAPE]','Esci')
         if not self.selected:
             self.write_key('[N]', 'Nuovo sprite')
         else:
             self.write_key('[Q]', 'Cambia classe')
+            self.write_key('[WASD]', 'Cambia quad')

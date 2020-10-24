@@ -57,14 +57,20 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         self.running = False
-                    elif event.key == pygame.K_s:
+                    elif event.key == pygame.K_p:
                         save(self)
                     elif self.options.selected:
                         if event.key == pygame.K_SPACE:
                             self.options.selected = None
-                            pygame.mouse.set_visible(True); return
+                            pygame.mouse.set_visible(True)
                         elif event.key == pygame.K_q:
                             self.options.selected.switch_class()
+                        elif event.key == pygame.K_w:
+                            qx, qy = self.options.selected.qx, self.options.selected.qy
+                            self.options.selected.set_quad(qx, qy-1)
+                        elif event.key == pygame.K_s:
+                            qx, qy = self.options.selected.qx, self.options.selected.qy
+                            self.options.selected.set_quad(qx, qy+1)
                         elif event.key == pygame.K_UP:
                             self.t[1] -= 1
                         elif event.key == pygame.K_DOWN:
