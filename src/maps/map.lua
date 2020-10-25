@@ -10,10 +10,13 @@ function Map(boss, name)
     boss.group = Group(boss)
     local file = require('maps/data/'..name)
 
-    -- DECOR
-    for i,sprite in ipairs(file.decor) do
-        sprite = Class['decor'](boss, sprite.x, sprite.y, sprite.q)
+    -- NPC
+    for i,npc in ipairs(file.npc) do
+        x = love.math.random(4)
+        y = love.math.random(4)
+        sprite = Class.npc(boss, npc.x, npc.y, {x, y})
         boss.group.add(sprite)
+        print(x, y)
     end
 
     -- WALLS
@@ -25,6 +28,12 @@ function Map(boss, name)
                 boss.group.add(sprite)
             end
         end
+    end
+
+    -- DECOR
+    for i,sprite in ipairs(file.decor) do
+        sprite = Class['decor'](boss, sprite.x, sprite.y, sprite.q)
+        boss.group.add(sprite)
     end
 
     return map

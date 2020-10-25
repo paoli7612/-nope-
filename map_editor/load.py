@@ -7,12 +7,14 @@ def load(game):
     cont = file.read()
 
     for npc in cont.split('-- NPC --')[1].split('\n'):
-        if not npc.strip():
+        npc = npc.strip()
+        if not npc:
             continue
         x, y, id, _ = npc.split(',')
         x = int(x.split('=')[1])
         y = int(y.split('=')[1])
         Sprite(game, x, y, 'npc', 2, 2)
+
     for wall in cont.split('-- WALL --')[1].split('\n'):
         wall = wall.strip()
         if not wall:
@@ -35,8 +37,21 @@ def load(game):
             for x in range(sx, ex+1):
                 Sprite(game, x*32, y*32, 'decor', qx, qy)
 
-    wall = cont.split('-- WALL --')[1]
-    decor = cont.split('-- DECOR --')[1]
+    for decor in cont.split('-- DECOR --')[1].split('\n'):
+        decor = decor.strip()
+        if not decor:
+            continue
+
+        x, y, qx, qy, _ = decor.split(',')
+        x = int(x.split('=')[1])
+        y = int(y.split('=')[1])
+        qx = int(qx.split('{')[1])
+        qy = int(qy.split('}')[0])
+
+        Sprite(game, x, y, 'decor', qx, qy)
+
+
+        print(x, y, qx, qy)
 
 
     file.close()
