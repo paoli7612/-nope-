@@ -7,7 +7,6 @@ class Spritesheet:
         self.sheet = dict()
         self.sheet['npc'] = self.get_sheet('npc')
         self.sheet['decor'] = self.get_sheet('decor')
-        self.sheet['wall'] = self.get_sheet('wall')
 
     def get_sheet(self, name):
         p = path.join(self.game.path, '../src/images/' + name + '.png')

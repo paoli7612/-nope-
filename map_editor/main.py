@@ -31,6 +31,33 @@ class Game:
             self.draw()
             self.clock.tick(60)
 
+    def keydown(self, key):
+            if key == pygame.K_ESCAPE:
+                self.running = False
+            elif key == pygame.K_p:
+                save(self)
+            elif self.options.selected:
+                qx, qy = self.options.selected.qx, self.options.selected.qy
+                if key == pygame.K_SPACE:
+                    self.options.selected = None
+                    pygame.mouse.set_visible(True)
+                    return
+                elif key == pygame.K_q:
+                    self.options.selected.switch_class()
+                elif key == pygame.K_w: self.options.selected.set_quad(qx, qy-1)
+                elif key == pygame.K_s: self.options.selected.set_quad(qx, qy+1)
+                elif key == pygame.K_a: self.options.selected.set_quad(qx-1, qy)
+                elif key == pygame.K_d: self.options.selected.set_quad(qx+1, qy)
+
+                elif key == pygame.K_UP: self.t[1] -= 1
+                elif key == pygame.K_DOWN:  self.t[1] += 1
+                elif key == pygame.K_LEFT: self.t[0] -= 1
+                elif key == pygame.K_RIGHT: self.t[0] += 1
+                self.options.selected.rect.center = self.t
+
+            elif key == pygame.K_n:
+                self.options.selected = Sprite(self, 1024/2, 300, 'decor', 1, 1)
+
     def event(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -55,33 +82,7 @@ class Game:
                         self.options.selected.rect.center = pygame.mouse.get_pos()
                         self.t = list(pygame.mouse.get_pos())
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        self.running = False
-                    elif event.key == pygame.K_p:
-                        save(self)
-                    elif self.options.selected:
-                        if event.key == pygame.K_SPACE:
-                            self.options.selected = None
-                            pygame.mouse.set_visible(True)
-                        elif event.key == pygame.K_q:
-                            self.options.selected.switch_class()
-                        elif event.key == pygame.K_w:
-                            qx, qy = self.options.selected.qx, self.options.selected.qy
-                            self.options.selected.set_quad(qx, qy-1)
-                        elif event.key == pygame.K_s:
-                            qx, qy = self.options.selected.qx, self.options.selected.qy
-                            self.options.selected.set_quad(qx, qy+1)
-                        elif event.key == pygame.K_UP:
-                            self.t[1] -= 1
-                        elif event.key == pygame.K_DOWN:
-                            self.t[1] += 1
-                        elif event.key == pygame.K_LEFT:
-                            self.t[0] -= 1
-                        elif event.key == pygame.K_RIGHT:
-                            self.t[0] += 1
-                        self.options.selected.rect.center = self.t
-                    elif event.key == pygame.K_n:
-                        self.options.selected = Sprite(self, 1024/2, 300, 'decor', 1, 1)
+                    self.keydown(event.key)
 
 
     def update(self):

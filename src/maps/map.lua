@@ -10,8 +10,9 @@ function Map(boss, name)
     boss.group = Group(boss)
     local file = require('maps/data/'..name)
 
-    for i,sprite in ipairs(file.sprites) do
-        sprite = Class[sprite.c](boss, sprite.x, sprite.y, sprite.q)
+    -- DECOR
+    for i,sprite in ipairs(file.decor) do
+        sprite = Class['decor'](boss, sprite.x, sprite.y, sprite.q)
         boss.group.add(sprite)
     end
 
@@ -19,7 +20,8 @@ function Map(boss, name)
     for i, wall in ipairs(file.wall) do
         for x=wall.s[1], wall.e[1] do
             for y=wall.s[2], wall.e[2] do
-                sprite = Class['decor'](boss, x, y, wall.q)
+                local px, py = boss.settings.pixels(x, y)
+                sprite = Class['decor'](boss, px, py, wall.q)
                 boss.group.add(sprite)
             end
         end
