@@ -1,9 +1,14 @@
 function Group(boss)
     local group = {}
     group.sprites = {}
+    group.inconsistent = {}
 
-    function group.add(sprite)
-        table.insert(group.sprites, sprite)
+    function group.add(sprite, inconsistent)
+        if inconsistent then
+            table.insert(group.inconsistent, sprite)
+        else
+            table.insert(group.sprites, sprite)
+        end
     end
 
     function group.update(dt)
@@ -13,6 +18,9 @@ function Group(boss)
     end
 
     function group.draw()
+        for i,sprite in ipairs(group.inconsistent) do
+            sprite.draw()
+        end
         for i,sprite in ipairs(group.sprites) do
             sprite.draw()
         end

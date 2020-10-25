@@ -2,7 +2,7 @@ local Sprite = require('sprites/sprite')
 
 function Decor(boss, x, y, q)
     local decor = Sprite(boss, x, y)
-    local spritesheet = boss.spritesheet.decor
+    local spritesheet = boss.spritesheet
     decor.quad = spritesheet.get_quad(q[1], q[2])
     decor.color = {0, 1, 0, 1}
     decor.descrizione = 'just a decor'

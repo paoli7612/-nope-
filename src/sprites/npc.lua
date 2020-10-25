@@ -5,7 +5,7 @@ function Npc(boss, x, y, q)
         q = q or {love.math.random(0, 7), love.math.random(0,4)}
 
         local npc = Sprite(boss, x, y)
-        local spritesheet = boss.spritesheet.npc
+        local spritesheet = boss.npc_sheet
         npc.color = {0,1,0,0.8}
         npc.dir = "down"
         npc.action = "walk"
