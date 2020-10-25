@@ -45,7 +45,7 @@ def load(game):
         qx = int(qx.split('{')[1])
         qy = int(qy.split('}')[0])
 
-        Sprite(game, x, y, 'decor', qx, qy)
+        Sprite(game, x*32, y*32, 'decor', qx, qy)
 
 
         print(x, y, qx, qy)
