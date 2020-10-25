@@ -6,6 +6,7 @@
  - `$ love src`
 
  <img src="doc/img/004.png"/></br></br>
+ <img src="doc/img/005.png"/></br></br>
 # Game
 - ### main file `main.lua`
     Primo file che love utilizza.

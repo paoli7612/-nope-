@@ -37,6 +37,7 @@ class Boss:
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print(self.selector.rect.x // 32, self.selector.rect.y // 32)
+                self.running = False
 
     def update(self):
         self.selector.update()

@@ -1,4 +1,5 @@
 from sprite import Sprite
+from line import Line
 from os import path
 
 def load(game):
@@ -32,16 +33,12 @@ def load(game):
         qx = int(q[0])
         qy = int(q[1])
 
-        print(sx, sy, ex, ey)
-        for y in range(sy, ey+1):
-            for x in range(sx, ex+1):
-                Sprite(game, x*32, y*32, 'decor', qx, qy)
+        Line(game, sx, sy, ex, ey, qx, qy, 'decor')
 
     for decor in cont.split('-- DECOR --')[1].split('\n'):
         decor = decor.strip()
         if not decor:
             continue
-
         x, y, qx, qy, _ = decor.split(',')
         x = int(x.split('=')[1])
         y = int(y.split('=')[1])
@@ -52,5 +49,25 @@ def load(game):
 
 
         print(x, y, qx, qy)
+
+    for floor in cont.split('-- FLOOR --')[1].split('\n'):
+        floor = floor.strip()
+        if not floor:
+            continue
+        s, e, q, _, __ = floor.split('}')
+
+        s = s.split('{')[2].split(',')
+        e = e.split('{')[1].split(',')
+        q = q.split('{')[1].split(',')
+
+        sx = int(s[0])
+        sy = int(s[1])
+        ex = int(e[0])
+        ey = int(e[1])
+        qx = int(q[0])
+        qy = int(q[1])
+
+        Line(game, sx, sy, ex, ey, qx, qy, 'decor')
+
 
     file.close()

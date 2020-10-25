@@ -19,7 +19,7 @@ function Boss()
     boss.npc_sheet = Spritesheet(boss, 'npc')
     boss.maps = Maps(boss)
 
-    boss.player = Player(boss, 100, 500)
+    boss.player = Player(boss, 100, 280)
 
 
     function boss.update(dt)

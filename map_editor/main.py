@@ -18,6 +18,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.spritesheet = Spritesheet(self)
         self.sprites = pygame.sprite.Group()
+        self.lines = pygame.sprite.Group()
         self.options.selected = None
         load(self)
         self.t = None # trasla freccie
@@ -84,14 +85,15 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     self.keydown(event.key)
 
-
     def update(self):
         self.sprites.update()
+        self.lines.update()
         self.options.update()
 
     def draw(self):
         self.screen.fill((240, 240, 240))
         self.options.draw()
+        self.lines.draw(self.screen)
         self.sprites.draw(self.screen)
         pygame.display.flip()
 

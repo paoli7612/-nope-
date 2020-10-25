@@ -13,11 +13,11 @@ function Map(boss, name)
 
     -- NPC
     for i,npc in ipairs(file.npc) do
-        x = love.math.random(4)
-        y = love.math.random(4)
-        sprite = Class.npc(boss, npc.x, npc.y, {x, y})
+        qx = love.math.random(4)
+        qy = love.math.random(4)
+        x, y = boss.settings.pixels(npc.x, npc.y)
+        sprite = Class.npc(boss, x, y, {qx, qy})
         boss.group.add(sprite)
-        print(x, y)
     end
 
     -- WALLS

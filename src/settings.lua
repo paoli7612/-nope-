@@ -25,11 +25,11 @@ end
 
 function settings.draw()
     love.graphics.setColor(0, 0, 0)
-    love.graphics.print("ESC to quit", 10, 10)
-    love.graphics.print("P toggle fullscreen", 10, 30)
-    love.graphics.print("O change monitor", 10, 50)
-    love.graphics.print("I toggle inventory", 10, 70)
-    love.graphics.print("Y toggle stas npc", 10, 110)
+    love.graphics.print("ESC to quit", 400, 10)
+    love.graphics.print("P toggle fullscreen", 400, 30)
+    love.graphics.print("O change monitor", 400, 50)
+    love.graphics.print("I toggle inventory", 400, 70)
+    love.graphics.print("Y toggle stas npc", 400, 110)
 end
 
 settings.interface = {
@@ -39,7 +39,7 @@ settings.interface = {
         w = settings.WIDTH - 40,
         h = 130,
         m = 10,
-        key = 'U'
+        key = ' '
     },
     inventory = {
         x = settings.WIDTH - 420,

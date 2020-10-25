@@ -11,9 +11,9 @@ end
 
 function love.draw()
     boss.draw()
-    color = {0.6, 0.6, 0.6}
+    color = {0.3, 0.3, 0.3, 1}
     love.graphics.setBackgroundColor(color)
-    
+
 end
 
 function love.keypressed(key)
