@@ -33,7 +33,8 @@ function Map(boss, name)
 
     -- DECOR
     for i,sprite in ipairs(file.decor) do
-        sprite = Class['decor'](boss, sprite.x, sprite.y, sprite.q)
+        local x, y = boss.settings.pixels(sprite.x, sprite.y)
+        sprite = Class['decor'](boss, x, y, sprite.q)
         boss.group.add(sprite)
     end
 

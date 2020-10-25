@@ -53,5 +53,4 @@ def load(game):
 
         print(x, y, qx, qy)
 
-
     file.close()
