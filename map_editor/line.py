@@ -9,6 +9,7 @@ class Line(pygame.sprite.Sprite):
         h = (ey - sy + 1)*32
         self.image = pygame.Surface((w, h))
         self.rect = self.image.get_rect()
+        self.image.set_colorkey((0,0,0))
         self.rect.x = sx*32
         self.rect.y = sy*32
         self.tx = ex - sx + 1

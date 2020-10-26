@@ -11,4 +11,5 @@ class Spritesheet:
     def get_sheet(self, name):
         p = path.join(self.game.path, '../src/images/' + name + '.png')
         image = pygame.image.load(p).convert().convert_alpha()
+        image.set_colorkey((0,0,0))
         return image

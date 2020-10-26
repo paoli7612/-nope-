@@ -25,7 +25,6 @@ function Boss()
     end
 
     function boss.draw()
-        print("\t draw")
         love.graphics.setBackgroundColor(0.4, 0.4, 0.4, 1) -- SFONDO
         boss.group.draw()
         boss.interface.draw()
