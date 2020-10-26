@@ -19,30 +19,19 @@ function Map(boss, name)
         sprite = Class.npc(boss, map.group, x, y, {qx, qy}, npc.l)
     end
 
-    -- WALLS
-    for i, wall in ipairs(file.wall) do
-        for x=wall.s[1], wall.e[1] do
-            for y=wall.s[2], wall.e[2] do
+    -- TILES --
+    for i, tiles in ipairs(file.tiles) do
+        for x=tiles.s[1], tiles.e[1] do
+            for y=tiles.s[2], tiles.e[2] do
                 local px, py = boss.settings.pixels(x, y)
-                sprite = Class['decor'](boss, map.group, px, py, wall.q, wall.c, wall.l)
+                Class[(tiles.n or 'decor')](boss, map.group, px, py, tiles.q, tiles.c , tiles.l or 2)
             end
         end
     end
 
-    -- DECOR
-    for i,sprite in ipairs(file.decor) do
-        local x, y = boss.settings.pixels(sprite.x, sprite.y)
-        sprite = Class['decor'](boss, map.group, x, y, sprite.q, sprite.c, 1)
-    end
-
-    -- FLOOR
-    for i, floor in ipairs(file.floor) do
-        for x=floor.s[1], floor.e[1] do
-            for y=floor.s[2], floor.e[2] do
-                local px, py = boss.settings.pixels(x, y)
-                sprite = Class['floor'](boss, map.group, px, py, floor.q, floor.c, 1)
-            end
-        end
+    for i, tile in ipairs(file.tile) do
+        local px, py = boss.settings.pixels(tile.x, tile.y)
+        Class[(tile.n or 'decor')](boss, map.group, px, py, tile.q, tile.c, tile.l or 2)
     end
 
     function map.load()

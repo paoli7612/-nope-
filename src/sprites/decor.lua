@@ -1,7 +1,7 @@
 local Sprite = require('sprites/sprite')
 
 function Decor(boss, group, x, y, q, collider, layer)
-    local decor = Sprite(boss, group, x, y, collider, layer or 2)
+    local decor = Sprite(boss, group, x, y, collider, layer)
     local spritesheet = boss.spritesheet
     decor.quad = spritesheet.get_quad(q[1], q[2])
     decor.color = {0, 1, 0, 1}

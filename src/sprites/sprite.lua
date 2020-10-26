@@ -1,7 +1,8 @@
 function Sprite(boss, group, x, y, collider, layer)
     local sprite = {}
+
     if group then
-        group.add(sprite, collider)
+        group.add(sprite, collider and true)
     end
 
     sprite.x = x
@@ -10,7 +11,7 @@ function Sprite(boss, group, x, y, collider, layer)
     sprite.dx = 0
     sprite.dy = 0
     sprite.color = {1, 0, 1, 0.8}
-    sprite.layer = layer or 1
+    sprite.layer = layer
 
     function sprite.update(dt)
         if (not boss.sprites.collide(sprite)) then
