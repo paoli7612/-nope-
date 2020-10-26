@@ -11,7 +11,7 @@ class Sprite(pygame.sprite.Sprite):
         self.pos = (x, y)
         self.rect.topleft = x*32, y*32
         self.image.set_colorkey((0,0,0))
-        self.layer = l
+        self._layer = l
         self.className = className
         if className == 'npc':
             print(qx, qy)

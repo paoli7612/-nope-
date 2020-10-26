@@ -72,12 +72,15 @@ class Game:
                         pos = pygame.sprite.Sprite()
                         pos.rect = pygame.rect.Rect(0, 0, 2, 2)
                         pos.rect.center = pygame.mouse.get_pos()
-                        for sprite in self.sprites:
-                            if pygame.sprite.collide_rect(sprite, pos):
-                                self.options.selected = sprite
-                                self.t = list(sprite.rect.center)
-                                pygame.mouse.set_visible(False)
-                                break;
+                        def gin(group):
+                            for sprite in group:
+                                if pygame.sprite.collide_rect(sprite, pos):
+                                    self.options.selected = sprite
+                                    self.t = list(sprite.rect.center)
+                                    pygame.mouse.set_visible(False)
+                                    break;
+                        gin(self.sprites)
+                        gin(self.lines)
                 elif event.type == pygame.MOUSEMOTION:
                     if self.options.selected:
                         self.options.selected.rect.center = pygame.mouse.get_pos()

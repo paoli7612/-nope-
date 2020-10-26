@@ -1,8 +1,8 @@
+local Settings = require('settings') -- Settings
 local Player = require('sprites/player') -- Giocatore
 local Maps = require('maps/maps') -- Mappe
 local Interface = require('interface/interface') -- Interfacce
 local Spritesheet = require('images/spritesheet') -- Spritesheet
-local Settings = require('settings')
 
 function Boss()
     local boss = {}
@@ -12,9 +12,7 @@ function Boss()
     boss.spritesheet = Spritesheet(boss, 'decor')
     boss.npc_sheet = Spritesheet(boss, 'npc')
     boss.maps = Maps(boss)
-
     boss.player = Player(boss, 100, 280)
-
     boss.pause = false
 
     function boss.update(dt)
