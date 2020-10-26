@@ -2,7 +2,6 @@ local Boss = require('boss')
 
 function love.load()
     boss = Boss()
-    boss.settings.window_update()
 end
 
 function love.update(dt)
