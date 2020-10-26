@@ -7,7 +7,7 @@ local Settings = require('settings')
 function Boss()
     local boss = {}
     boss.settings = Settings(boss)
-    boss.sprites = Group(boss)
+    boss.group = Group(boss)
     boss.interface = Interface(boss)
     boss.spritesheet = Spritesheet(boss, 'decor')
     boss.npc_sheet = Spritesheet(boss, 'npc')
@@ -20,14 +20,14 @@ function Boss()
     function boss.update(dt)
         if not boss.pause then
             boss.player.update(dt)
-            boss.sprites.update(dt)
+            boss.group.update(dt)
         end
     end
 
     function boss.draw()
         print("\t draw")
         love.graphics.setBackgroundColor(0.4, 0.4, 0.4, 1) -- SFONDO
-        boss.sprites.draw()
+        boss.group.draw()
         boss.interface.draw()
         boss.settings.draw()
     end

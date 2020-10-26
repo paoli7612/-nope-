@@ -35,7 +35,7 @@ function Map(boss, name)
     end
 
     function map.load()
-        boss.sprites = map.group
+        boss.group = map.group
     end
 
     return map

@@ -14,7 +14,7 @@ function Sprite(boss, group, x, y, collider, layer)
     sprite.layer = layer
 
     function sprite.update(dt)
-        if (not boss.sprites.collide(sprite)) then
+        if (not boss.group.collide(sprite)) then
             if (not (sprite.dx == 0) and (not (sprite.dy == 0))) then
                 sprite.x = sprite.x + sprite.speed * sprite.dx * 0.6
                 sprite.y = sprite.y + sprite.speed * sprite.dy * 0.6
