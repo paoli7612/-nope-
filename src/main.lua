@@ -2,7 +2,6 @@ local Boss = require('boss')
 
 function love.load()
     boss = Boss()
-    boss.settings.window_update()
 end
 
 function love.update(dt)
@@ -11,9 +10,6 @@ end
 
 function love.draw()
     boss.draw()
-    color = {0.3, 0.3, 0.3, 1}
-    love.graphics.setBackgroundColor(color)
-
 end
 
 function love.keypressed(key)
@@ -36,6 +32,9 @@ function love.keypressed(key)
         else
             boss.player.interact()
         end
+    elseif key == 'r' then
+        print(boss.sprites.show())
+        print(boss.maps.spawn.group.show())
     end
 end
 function love.keyreleased(key)

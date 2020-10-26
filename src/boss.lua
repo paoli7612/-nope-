@@ -1,19 +1,13 @@
--- map
-local Maps = require('maps/maps')
-
--- Inrerface
-local Interface = require('interface/interface')
-
--- Sprites
-local Player = require('sprites/player')
-
--- Images
-local Spritesheet = require('images/spritesheet')
+local Player = require('sprites/player') -- Giocatore
+local Maps = require('maps/maps') -- Mappe
+local Interface = require('interface/interface') -- Interfacce
+local Spritesheet = require('images/spritesheet') -- Spritesheet
+local Settings = require('settings')
 
 function Boss()
     local boss = {}
-    boss.pause = false
-    boss.settings = require('settings')
+    boss.settings = Settings(boss)
+    boss.group = Group(boss)
     boss.interface = Interface(boss)
     boss.spritesheet = Spritesheet(boss, 'decor')
     boss.npc_sheet = Spritesheet(boss, 'npc')
@@ -21,6 +15,7 @@ function Boss()
 
     boss.player = Player(boss, 100, 280)
 
+    boss.pause = false
 
     function boss.update(dt)
         if not boss.pause then
@@ -30,8 +25,8 @@ function Boss()
     end
 
     function boss.draw()
+        love.graphics.setBackgroundColor(0.4, 0.4, 0.4, 1) -- SFONDO
         boss.group.draw()
-        boss.player.draw()
         boss.interface.draw()
         boss.settings.draw()
     end

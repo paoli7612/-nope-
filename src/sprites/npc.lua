@@ -1,17 +1,16 @@
 local Sprite = require('sprites/sprite')
 local Stats = require('sprites/stats/stats')
 
-function Npc(boss, x, y, q)
+function Npc(boss, group, x, y, q)
         q = q or {love.math.random(0, 7), love.math.random(0,4)}
 
-        local npc = Sprite(boss, x, y)
+        local npc = Sprite(boss, group, x, y, true, 2)
         local spritesheet = boss.npc_sheet
         npc.color = {0,1,0,0.8}
         npc.dir = "down"
         npc.action = "walk"
         npc.frame = 1
         npc.quad = spritesheet.quads_npc(q[1], q[2])
-        print("npc", npc.quad)
         npc.stats = Stats(boss)
 
         local dtotal = 0

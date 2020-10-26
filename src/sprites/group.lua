@@ -3,11 +3,11 @@ function Group(boss)
     group.sprites = {}
     group.inconsistent = {}
 
-    function group.add(sprite, inconsistent)
-        if inconsistent then
-            table.insert(group.inconsistent, sprite)
-        else
+    function group.add(sprite, collider)
+        if collider then
             table.insert(group.sprites, sprite)
+        else
+            table.insert(group.inconsistent, sprite)
         end
     end
 
@@ -17,13 +17,22 @@ function Group(boss)
         end
     end
 
+    function draw(g, l)
+        for i, s in ipairs(g) do
+            if l == s.layer then
+                s.draw()
+            end
+        end
+    end
+
     function group.draw()
-        for i,sprite in ipairs(group.inconsistent) do
-            sprite.draw()
-        end
-        for i,sprite in ipairs(group.sprites) do
-            sprite.draw()
-        end
+        draw(group.inconsistent, 0)
+        draw(group.inconsistent, 1)
+        boss.player.draw()
+        draw(group.inconsistent, 2)
+        draw(group.sprites, 0)
+        draw(group.sprites, 1)
+        draw(group.sprites, 2)
     end
 
     function group.collide(sprite)

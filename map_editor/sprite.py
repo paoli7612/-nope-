@@ -3,22 +3,23 @@ import pygame
 colorkey = (12, 12, 11)
 
 class Sprite(pygame.sprite.Sprite):
-    def __init__(self, game, x, y, className, qx, qy):
-        self.className = className
+    def __init__(self, game, x, y, qx, qy, c, l, className = 'decor'):
         pygame.sprite.Sprite.__init__(self, game.sprites)
         self.game = game
         self.image = pygame.Surface((32, 32))
         self.rect = self.image.get_rect()
         self.pos = (x, y)
-        self.rect.topleft = self.pos
+        self.rect.topleft = x*32, y*32
         self.image.set_colorkey((0,0,0))
-        self.set_quad(qx, qy)
+        self.layer = l
+        self.className = className
+        if className == 'npc':
+            print(qx, qy)
+            self.set_quad(qx*3+1, qy*4)
+        else: self.set_quad(qx, qy)
 
     def set_quad(self, qx, qy):
         self.qx, self.qy = qx, qy
-        if self.className == 'npc':
-            qx = qx*3 +1
-            qy = qy*4
         rect = pygame.rect.Rect(qx*32, qy*32, 32, 32)
         self.image.blit(self.game.spritesheet.sheet[self.className], (0,0), rect)
 
