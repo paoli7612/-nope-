@@ -8,7 +8,7 @@ local Class = {
 
 function Map(boss, name)
     local map = {}
-    boss.group = Group(boss)
+    map.group = Group(boss)
     local file = require('maps/data/'..name)
 
     -- NPC
@@ -16,8 +16,7 @@ function Map(boss, name)
         qx = love.math.random(4)
         qy = love.math.random(4)
         x, y = boss.settings.pixels(npc.x, npc.y)
-        sprite = Class.npc(boss, x, y, {qx, qy})
-        boss.group.add(sprite)
+        sprite = Class.npc(boss, map.group, x, y, {qx, qy}, npc.l)
     end
 
     -- WALLS
@@ -25,8 +24,7 @@ function Map(boss, name)
         for x=wall.s[1], wall.e[1] do
             for y=wall.s[2], wall.e[2] do
                 local px, py = boss.settings.pixels(x, y)
-                sprite = Class['decor'](boss, px, py, wall.q)
-                boss.group.add(sprite)
+                sprite = Class['decor'](boss, map.group, px, py, wall.q, wall.c, wall.l)
             end
         end
     end
@@ -34,8 +32,7 @@ function Map(boss, name)
     -- DECOR
     for i,sprite in ipairs(file.decor) do
         local x, y = boss.settings.pixels(sprite.x, sprite.y)
-        sprite = Class['decor'](boss, x, y, sprite.q)
-        boss.group.add(sprite)
+        sprite = Class['decor'](boss, map.group, x, y, sprite.q, sprite.c, 1)
     end
 
     -- FLOOR
@@ -43,12 +40,14 @@ function Map(boss, name)
         for x=floor.s[1], floor.e[1] do
             for y=floor.s[2], floor.e[2] do
                 local px, py = boss.settings.pixels(x, y)
-                sprite = Class['floor'](boss, px, py, floor.q)
-                boss.group.add(sprite, true)
+                sprite = Class['floor'](boss, map.group, px, py, floor.q, floor.c, 1)
             end
         end
     end
 
+    function map.load()
+        boss.sprites = map.group
+    end
 
     return map
 end
