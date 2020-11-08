@@ -27,11 +27,11 @@ function Group(boss)
 
     function group.draw()
         draw(group.inconsistent, 0)
+        draw(group.sprites, 0)
         draw(group.inconsistent, 1)
+        draw(group.sprites, 1)
         boss.player.draw()
         draw(group.inconsistent, 2)
-        draw(group.sprites, 0)
-        draw(group.sprites, 1)
         draw(group.sprites, 2)
     end
 

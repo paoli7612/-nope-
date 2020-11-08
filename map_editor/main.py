@@ -14,12 +14,13 @@ class Game:
         self.path = path.dirname(__file__)
         self.name = name
         self.options = Options(self)
-        self.screen = pygame.display.set_mode((1024, 600 + self.options.rect.h))
+        self.screen = pygame.display.set_mode((960, 480 + self.options.rect.h))
         self.clock = pygame.time.Clock()
         self.spritesheet = Spritesheet(self)
         self.sprites = pygame.sprite.Group()
         self.lines = pygame.sprite.Group()
         self.options.selected = None
+
         load(self)
         self.t = None # trasla freccie
         self.loop()
@@ -72,12 +73,15 @@ class Game:
                         pos = pygame.sprite.Sprite()
                         pos.rect = pygame.rect.Rect(0, 0, 2, 2)
                         pos.rect.center = pygame.mouse.get_pos()
-                        for sprite in self.sprites:
-                            if pygame.sprite.collide_rect(sprite, pos):
-                                self.options.selected = sprite
-                                self.t = list(sprite.rect.center)
-                                pygame.mouse.set_visible(False)
-                                break;
+                        def gin(group):
+                            for sprite in group:
+                                if pygame.sprite.collide_rect(sprite, pos):
+                                    self.options.selected = sprite
+                                    self.t = list(sprite.rect.center)
+                                    pygame.mouse.set_visible(False)
+                                    break;
+                        gin(self.sprites)
+                        gin(self.lines)
                 elif event.type == pygame.MOUSEMOTION:
                     if self.options.selected:
                         self.options.selected.rect.center = pygame.mouse.get_pos()

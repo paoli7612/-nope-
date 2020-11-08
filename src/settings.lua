@@ -1,7 +1,7 @@
 function Settings(boss)
     local settings = {
-        WIDTH = 1024,
-        HEIGHT = 600,
+        WIDTH = 32*30,
+        HEIGHT = 32*15,
         TILE = 32,
         stats = false
     }
