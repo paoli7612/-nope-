@@ -14,7 +14,7 @@ class Game:
         self.path = path.dirname(__file__)
         self.name = name
         self.options = Options(self)
-        self.screen = pygame.display.set_mode((1024, 600 + self.options.rect.h))
+        self.screen = pygame.display.set_mode((960, 480 + self.options.rect.h))
         self.clock = pygame.time.Clock()
         self.spritesheet = Spritesheet(self)
         self.sprites = pygame.sprite.Group()

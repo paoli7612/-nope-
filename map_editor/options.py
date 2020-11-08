@@ -3,9 +3,9 @@ import pygame
 class Options:
     def __init__(self, game):
         self.game = game
-        self.image = pygame.Surface((1024, 200))
+        self.image = pygame.Surface((960, 200))
         self.rect = self.image.get_rect()
-        self.rect.topleft =(0, 600)
+        self.rect.topleft =(0, 480)
         self.font_name = pygame.font.match_font('monospace')
         self.font = pygame.font.Font(self.font_name, 21)
         self.selected = None

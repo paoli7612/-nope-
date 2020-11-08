@@ -16,9 +16,9 @@ class Line(pygame.sprite.Sprite):
         self.ty = ey - sy + 1
         self._layer = l
         self.className = c
-        self.get_quad(qx, qy)
+        self.set_quad(qx, qy)
 
-    def get_quad(self, qx, qy):
+    def set_quad(self, qx, qy):
         self.qx, self.qy = qx, qy
         rect = pygame.rect.Rect(qx*32, qy*32, 32, 32)
         for y in range(self.ty):
