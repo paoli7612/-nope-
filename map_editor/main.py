@@ -20,6 +20,7 @@ class Game:
         self.sprites = pygame.sprite.Group()
         self.lines = pygame.sprite.Group()
         self.options.selected = None
+
         load(self)
         self.t = None # trasla freccie
         self.loop()
