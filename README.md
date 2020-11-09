@@ -5,7 +5,7 @@
  - `$ sudo apt-get install love`
  - `$ love src`
 
- <img src="doc/img/007.png"/></br></br>
+ <img src="doc/img/008.png"/></br></br>
 # Game
 - ### main file `main.lua`
     Primo file che love utilizza.
