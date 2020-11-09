@@ -39,7 +39,7 @@ function Group(boss)
         local x = sprite.x + sprite.dx*sprite.speed*2
         local y = sprite.y + sprite.dy*sprite.speed*2
         for i,other in ipairs(group.sprites) do
-            if (math.abs(other.y - y) < 30) and (math.abs(other.x - x) < 20) then
+            if (math.abs(other.y - y) < 30) and (math.abs(other.x - x) < 25) then
                 return true
             end
         end
@@ -48,7 +48,7 @@ function Group(boss)
     -- Restituisce se presente lo sprite che sta a queste coordinate
     function group.get(x, y)
         for i,sprite in ipairs(group.sprites) do
-            if (math.abs(sprite.y - y) < 30) and (math.abs(sprite.x - x) < 20) then
+            if (math.abs(sprite.y - y) < 32) and (math.abs(sprite.x - x) < 32) then
                 return sprite
             end
         end
