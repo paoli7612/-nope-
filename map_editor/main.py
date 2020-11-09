@@ -77,9 +77,9 @@ class Game:
                         for g in [self.sprites, self.lines]:
                             for sprite in g:
                                 if pygame.sprite.collide_rect(sprite, pos):
-                                    self.options.selected = sprite
                                     self.t = list(sprite.rect.center)
                                     pygame.mouse.set_visible(False)
+                                    self.options.selected = sprite
 
                 elif event.type == pygame.MOUSEMOTION:
                     if self.options.selected:
