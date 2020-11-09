@@ -1,10 +1,13 @@
 function Settings(boss)
     local settings = {
-        WIDTH = 32*30,
-        HEIGHT = 32*15,
+        X = 50,
+        Y = 30,
         TILE = 32,
         stats = false
     }
+    settings.WIDTH = 32*settings.X
+    settings.HEIGHT = 32*settings.Y
+    print(settings.WIDTH, settings.HEIGHT)
     settings.window = {
         fullscreen = false,
         fullscreentype = 'exclusive',
