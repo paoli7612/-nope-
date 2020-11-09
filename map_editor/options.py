@@ -21,7 +21,7 @@ class Options:
     def write_key(self, keys, desc):
         self.n_options  += 1
         self.write(keys, 20, self.n_options*20, (255, 255, 255))
-        self.write(desc, 380, self.n_options*20, (255, 200, 150))
+        self.write(desc, 480, self.n_options*20, (255, 200, 150))
 
     def draw(self):
         self.game.screen.blit(self.image, self.rect)

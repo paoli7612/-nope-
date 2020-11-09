@@ -19,7 +19,6 @@ def l_tiles(game, tiles):
     for p in tiles[1:].split(', '):
         if '--' in p: continue
         p = p.replace('}', '')
-        print(p)
         if 's' in p: sx, sy = list(map(int, p.split('{')[1].split(',')))
         elif 'e' in p: ex, ey = list(map(int, p.split('{')[1].split(',')))
         elif 'q' in p: qx, qy = list(map(int, p.split('{')[1].split(',')))
