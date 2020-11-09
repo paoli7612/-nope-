@@ -58,7 +58,8 @@ class Game:
                 self.options.selected.rect.center = self.t
 
             elif key == pygame.K_n:
-                self.options.selected = Sprite(self, 1024/2, 300, 'decor', 0,0)
+                self.options.selected = Sprite(self, 10, 10, 1, 1, 1, 1)
+                pygame.mouse.set_visible(False)
 
     def event(self):
         for event in pygame.event.get():
@@ -80,6 +81,7 @@ class Game:
                                     self.t = list(sprite.rect.center)
                                     pygame.mouse.set_visible(False)
                                     self.options.selected = sprite
+                                    return
 
                 elif event.type == pygame.MOUSEMOTION:
                     if self.options.selected:
