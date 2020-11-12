@@ -2,6 +2,11 @@ local Boss = require('boss')
 
 function love.load()
     boss = Boss()
+
+    music = love.audio.newSource("snd/asd.wav", "static")
+    music:setVolume(0.9)
+    music:setLooping(true)
+    music:play()
 end
 
 function love.update(dt)
